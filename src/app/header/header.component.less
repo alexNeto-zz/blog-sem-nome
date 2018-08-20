@@ -1,0 +1,45 @@
+@import '../../colors.less';
+
+header {
+  width: 100vw;
+  height: 100px;
+  color: @preto;
+  margin: 0;
+  padding: 0;
+  background-color: @branco;
+  border-bottom-style: solid;
+  border-bottom-color: @cinza;
+  border-bottom-width: 1px;
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  @media (max-width: 750px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 2px;
+  }
+}
+
+#logo {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 3em;
+  @media (max-width: 750px) {
+    font-size: 2em;
+    order: -1;
+    margin-top: 5%;
+    padding-top: 5px;
+  }
+}
+
+.float {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
