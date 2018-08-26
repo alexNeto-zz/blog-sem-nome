@@ -7,14 +7,49 @@
   <link href="https://fonts.googleapis.com/css?family=Gilda+Display" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 
-  <base href="/">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/master.css">
+
+  <script src="./js/main.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
-  <app-root></app-root>
+  <header>
+
+    <div class="drop-container">
+      <button class="botao borda botao-header margem-inferior">Navegação</button>
+      <div class="drop-conteudo borda">
+        <a class="" href="#">Link 1</a>
+        <a class="" href="#">Link 2</a>
+        <a class="" href="#">Link 3</a>
+      </div>
+    </div>
+
+    <div id="logo">Locadora Sem Nome</div>
+
+    <div class="drop-container">
+      <button class="botao borda botao-header margem-inferior">Autenticação</button>
+      <div class="drop-conteudo borda">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+  </header>
+  <div class="container column">
+    <div class="container row">
+      <button class="filtro borda botao">filtro</button>
+      <button class="filtro borda botao">filtro</button>
+    </div>
+    <div class="container row">
+      <app-filtro-pesquisa class="filtro-pesquisa"></app-filtro-pesquisa>
+    </div>
+  </div>
+  <div id="filtro-pesquisa" class="borda"></div>
 </body>
 
 </html>
