@@ -1,12 +1,11 @@
 # LocadoraFront
 
-## pra fazer
+## exemplos de:
 
-* [x] Estrutura básica
-* [x] Estilo Básico   
-* [ ] Ações dos botões de filtro
-* [ ] Ações do botã de autenticação
-* [ ] Ações do botão de navegação
-* [ ] Botões de paginação
-* [ ] Thumbnail de cada carro
-* [ ] página de um carro
+* Java versão 8 ou superior:
+* JPA com Hibernate 5 ou superior:
+* Padrão MVC:
+* Servlet anotados:
+* JPA:
+* Javascript Closure:
+* Javascript DOM handler:
