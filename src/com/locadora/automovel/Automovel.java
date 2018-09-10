@@ -2,20 +2,40 @@ package com.locadora.automovel;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.locadora.compartilhado.enumeradores.Categoria;
 import com.locadora.compartilhado.enumeradores.EstadoConservacao;
 
+@Entity
+@Table(name = "automovel")
 public class Automovel {
 
+	@Id
+	private Long id;
+	@Column
 	private Categoria categoria;
+	@Column
 	private Integer ano;
+	@Column
 	private String placa;
+	@Column
 	private String modelo;
+	@Column
 	private String fabricante;
+	@Column
 	private String cor;
+	@Column
 	private EstadoConservacao estadoConcervacao;
+	@Column
 	private BigDecimal quilometragem;
+	@Column
 	private BigDecimal tanqueCombustivel;
+
+	@Column
 
 	public Categoria getCategoria() {
 		return categoria;

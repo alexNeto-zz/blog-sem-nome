@@ -2,18 +2,36 @@ package com.locadora.usuario;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 
+	@Id
 	private Long id;
+	@Column
 	private String nomeUsuario;
+	@Column
 	private String primeiroNome;
+	@Column
 	private String ultimoNome;
+	@Column
 	private String senha;
+	@Column
 	private Boolean emailVerificado;
+	@Column
 	private Date Datanascimento;
+	@Column
 	private String cpf;
+	@Column
 	private String cnpj;
+	@Column
 	private String rg;
+	@Column
 	private String cnh;
 
 	public Long getId() {

@@ -3,15 +3,30 @@ package com.locadora.reserva;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.locadora.automovel.Automovel;
 import com.locadora.conta.Conta;
 
+@Entity
+@Table(name = "reserva")
 public class Reserva {
+	@Id
+	private Long id;
+	@Column
 	private String codigoReserva;
+	@Column
 	private Conta conta;
+	@Column
 	private Date retirada;
+	@Column
 	private Date entregaPrevista;
+	@Column
 	private BigDecimal valorPrevisto;
+	@Column
 	private Automovel carroReservado;
 
 	public String getCodigoReserva() {

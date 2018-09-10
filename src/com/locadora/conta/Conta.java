@@ -3,17 +3,31 @@ package com.locadora.conta;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.locadora.automovel.Automovel;
 import com.locadora.usuario.Usuario;
 
+@Entity
+@Table(name = "conta")
 public class Conta {
 
+	@Id
 	private Long id;
+	@Column
 	private List<Automovel> ReservaList;
+	@Column
 	private List<Automovel> AbertoList;
+	@Column
 	private List<Automovel> AlugadoList;
+	@Column
 	private BigDecimal multa;
+	@Column
 	private BigDecimal desconto;
+	@Column
 	private Usuario usuario;
 
 	public Long getId() {
