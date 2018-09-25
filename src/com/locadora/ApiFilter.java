@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/*")
+@WebFilter("/*") // só pra conseguir prgramar antes de faser o login
 public class ApiFilter implements Filter {
 
 	@Override
@@ -22,12 +22,13 @@ public class ApiFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		HttpSession session = request.getSession(false);
-		String loginURI = request.getContextPath() + "/login";
+		String loginURI = request.getContextPath() + "/autenticacao";
 
 		boolean loggedIn = session != null && session.getAttribute("user") != null;
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
 
 		if (loggedIn || loginRequest) {
+			request.setCharacterEncoding("UTF-8");
 			chain.doFilter(request, response);
 		} else {
 			response.sendRedirect(loginURI);

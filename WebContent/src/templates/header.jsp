@@ -1,3 +1,5 @@
+
+
 <header>
     <div class="drop-container">
         <button class="botao borda botao-header margem-inferior">Navegação</button>
@@ -11,7 +13,9 @@
     <div class="drop-container">
         <button id="autenticacao" class="botao borda botao-header margem-inferior">Autenticação</button>
         <div class="drop-conteudo borda">
-            <a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+            <div><a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a></div>
+          
+            
         </div>
     </div>
 </header>

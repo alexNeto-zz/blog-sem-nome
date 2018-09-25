@@ -4,15 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.locadora.Identificador;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario extends Identificador{
 
-	@Id
-	private Long id;
 	@Column
 	private String nomeUsuario;
 	@Column
@@ -33,14 +32,6 @@ public class Usuario {
 	private String rg;
 	@Column
 	private String cnh;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getNomeUsuario() {
 		return nomeUsuario;
