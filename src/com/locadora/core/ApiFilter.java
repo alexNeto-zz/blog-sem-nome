@@ -1,4 +1,4 @@
-package com.locadora;
+package com.locadora.core;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/*") // só pra conseguir prgramar antes de faser o login
+@WebFilter("/usuario/*") // só pra conseguir prgramar antes de faser o login
 public class ApiFilter implements Filter {
 
 	@Override

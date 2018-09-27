@@ -11,22 +11,22 @@ import javax.persistence.Table;
 import com.locadora.automovel.Automovel;
 import com.locadora.conta.Conta;
 
-@Entity
-@Table(name = "reserva")
+//@Entity
+//@Table(name = "reserva")
 public class Reserva {
-	@Id
+//	@Id
 	private Long id;
-	@Column
+//	@Column
 	private String codigoReserva;
-	@Column
+//	@Column
 	private Conta conta;
-	@Column
+//	@Column
 	private Date retirada;
-	@Column
+//	@Column
 	private Date entregaPrevista;
-	@Column
+//	@Column
 	private BigDecimal valorPrevisto;
-	@Column
+//	@Column
 	private Automovel carroReservado;
 
 	public String getCodigoReserva() {

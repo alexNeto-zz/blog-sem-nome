@@ -10,29 +10,29 @@ import javax.persistence.Table;
 import com.locadora.compartilhado.enumeradores.Categoria;
 import com.locadora.compartilhado.enumeradores.EstadoConservacao;
 
-@Entity
-@Table(name = "automovel")
+//@Entity
+//@Table(name = "automovel")
 public class Automovel {
-
-	@Id
-	private Long id;
-	@Column
+//
+//	@Id
+	private Long identificador;
+//	@Column
 	private Categoria categoria;
-	@Column
+//	@Column
 	private Integer ano;
-	@Column
+//	@Column
 	private String placa;
-	@Column
+//	@Column
 	private String modelo;
-	@Column
+//	@Column
 	private String fabricante;
-	@Column
+//	@Column
 	private String cor;
-	@Column
+//	@Column
 	private EstadoConservacao estadoConcervacao;
-	@Column
+//	@Column
 	private BigDecimal quilometragem;
-	@Column
+//	@Column
 	private BigDecimal tanqueCombustivel;
 
 	@Column

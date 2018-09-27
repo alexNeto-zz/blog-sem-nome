@@ -1,4 +1,4 @@
-package com.locadora;
+package com.locadora.core;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,5 +16,4 @@ public class ConexaoFabrica {
 
 		return entityManager;
 	}
-
 }

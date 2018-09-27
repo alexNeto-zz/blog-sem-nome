@@ -11,23 +11,23 @@ import javax.persistence.Table;
 import com.locadora.automovel.Automovel;
 import com.locadora.usuario.Usuario;
 
-@Entity
-@Table(name = "conta")
+//@Entity
+//@Table(name = "conta")
 public class Conta {
 
-	@Id
+//	@Id
 	private Long id;
-	@Column
+//	@Column
 	private List<Automovel> ReservaList;
-	@Column
+//	@Column
 	private List<Automovel> AbertoList;
-	@Column
+//	@Column
 	private List<Automovel> AlugadoList;
-	@Column
+//	@Column
 	private BigDecimal multa;
-	@Column
+//	@Column
 	private BigDecimal desconto;
-	@Column
+//	@Column
 	private Usuario usuario;
 
 	public Long getId() {

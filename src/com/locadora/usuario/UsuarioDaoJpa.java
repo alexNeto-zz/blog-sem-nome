@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import com.locadora.ConexaoFabrica;
+import com.locadora.core.ConexaoFabrica;
 
 public class UsuarioDaoJpa implements UsuarioDao {
 

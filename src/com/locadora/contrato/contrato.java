@@ -11,25 +11,25 @@ import javax.persistence.Table;
 import com.locadora.automovel.Automovel;
 import com.locadora.conta.Conta;
 
-@Entity
-@Table(name = "contrato")
+//@Entity
+//@Table(name = "contrato")
 public class contrato {
 
-	@Id
+//	@Id
 	private Long id;
-	@Column
+//	@Column
 	private Conta conta;
-	@Column
+//	@Column
 	private Automovel automovel;
-	@Column
+//	@Column
 	private Date retiradaEfetiva;
-	@Column
+//	@Column
 	private Date entregaEfetiva;
-	@Column
+//	@Column
 	private BigDecimal totalEfetivo;
-	@Column
+//	@Column
 	private BigDecimal pagoRetirada;
-	@Column
+//	@Column
 	private BigDecimal pagoDevolucao;
 
 	public Conta getConta() {
