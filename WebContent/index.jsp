@@ -4,8 +4,6 @@
 <html>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 	<link href="https://fonts.googleapis.com/css?family=Gilda+Display" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <% 
@@ -18,7 +20,7 @@
         <c:choose>
             <c:when test="${estaLogado == true}">
                 <button id="autenticacao" class="botao borda botao-header margem-inferior">
-                    <c:out>${session.getAttribute("nomeUsuario")</c:out>
+                    <p>TODO</p>
                 </button>
                 <div class="drop-conteudo borda">
                     <div><a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a></div>

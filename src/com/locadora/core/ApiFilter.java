@@ -28,7 +28,7 @@ public class ApiFilter implements Filter {
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
 
 		if (loggedIn || loginRequest) {
-			request.setCharacterEncoding("UTF-8");
+//			request.setCharacterEncoding("UTF-8");
 			chain.doFilter(request, response);
 		} else {
 			response.sendRedirect(loginURI);
