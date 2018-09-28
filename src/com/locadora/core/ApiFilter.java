@@ -24,7 +24,7 @@ public class ApiFilter implements Filter {
 		HttpSession session = request.getSession(false);
 		String loginURI = request.getContextPath() + "/autenticacao";
 
-		boolean loggedIn = session != null && session.getAttribute("user") != null;
+		boolean loggedIn = session != null && session.getAttribute("nomeUsuario") != null;
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
 
 		if (loggedIn || loginRequest) {

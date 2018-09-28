@@ -1,5 +1,9 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
+<% 
+    Boolean estaLogado = session != null && session.getAttribute("nomeUsuario") != null;
+    estaLogado = true;
+%>
 <header>
     <div class="drop-container">
         <button class="botao borda botao-header margem-inferior">Navegação</button>
@@ -8,14 +12,23 @@
         </div>
     </div>
 
-    <div id="logo">Locadora Sem Nome</div>
+    <h1 id="logo">Locadora Sem Nome</h1>
 
     <div class="drop-container">
-        <button id="autenticacao" class="botao borda botao-header margem-inferior">Autenticação</button>
-        <div class="drop-conteudo borda">
-            <div><a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a></div>
-          
-            
-        </div>
+        <c:choose>
+            <c:when test="${estaLogado == true}">
+                <button id="autenticacao" class="botao borda botao-header margem-inferior">
+                    <c:out>${session.getAttribute("nomeUsuario")</c:out>
+                </button>
+                <div class="drop-conteudo borda">
+                    <div><a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a></div>
+            </c:when>
+            <c:otherwise>
+                <button id="autenticacao" class="botao borda botao-header margem-inferior">Autenticação</button>
+                <div class="drop-conteudo borda">
+                    <div><a href="#">Entrar</a><a href="#">Cadastrar</a></div>
+            </c:otherwise>
+        </c:choose>
+    </div>
     </div>
 </header>

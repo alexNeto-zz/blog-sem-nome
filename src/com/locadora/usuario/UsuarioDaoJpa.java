@@ -3,6 +3,8 @@ package com.locadora.usuario;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 
 import com.locadora.core.ConexaoFabrica;
 
@@ -43,7 +45,14 @@ public class UsuarioDaoJpa implements UsuarioDao {
 	}
 
 	public Usuario encontrarPeloNome(String nomeUsuario) {
-		return entityManager.find(Usuario.class, nomeUsuario);
+		TypedQuery<Usuario> query = entityManager.createQuery(
+				"SELECT usuario FROM usuario usuario WHERE usuario.nome_usuario=:nomeUsuario", Usuario.class);
+		query.setParameter("nomeUsuario", nomeUsuario);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 	@Override
