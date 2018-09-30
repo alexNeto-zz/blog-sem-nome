@@ -23,14 +23,39 @@
                     <p>TODO</p>
                 </button>
                 <div class="drop-conteudo borda">
-                    <div><a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a></div>
+                    <div>
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
             </c:when>
             <c:otherwise>
                 <button id="autenticacao" class="botao borda botao-header margem-inferior">Autenticação</button>
                 <div class="drop-conteudo borda">
-                    <div><a href="#">Entrar</a><a href="#">Cadastrar</a></div>
+                    <div id="menu-autenticacao">
+                        <div>
+                            <a onclick="fazerAutenticacao()">Entrar</a>
+                        </div>
+                        <div>
+                            <a href="#">Cadastrar</a>
+                        </div>
+                    </div>
+                    <div id="menu-entrar">
+                        <div>
+                            <input type="text" name="nomeUsuario" id="nome-usuario" placeholder="Nome de Usuário">
+                        </div>
+                        <div>
+                            <input type="password" name="senha" id="senha" placeholder="Senha">
+                        </div>
+                        <div>
+                            <button>Entrar</button>
+                            <button onclick="voltarMenuInicial()">Voltar</button>
+                        </div>
+                    </div>
+                </div>
             </c:otherwise>
         </c:choose>
     </div>
-    </div>
 </header>
+<script src="src/js/autenticacao.js"></script>

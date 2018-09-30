@@ -1,4 +1,5 @@
-*, body {
+*,
+body {
   font-family: 'Gilda Display', serif;
   color: #565254;
 }
@@ -207,9 +208,39 @@ footer {
   right: 0;
   color: #ecf0f1;
   background-color: #565254;
-  height:200px;
+  height: 200px;
 }
 
-footer > p {
+footer>p {
   color: #ecf0f1;
+}
+
+#section-autenticacao {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#form-autenticacao {
+  width: 33%;
+  height: 33%;
+}
+
+.entrada-padrao {
+  width: 66%
+}
+
+.entrada-padrao>input {
+  font-size: 1.2em;
+}
+
+.entrada-padrao>label {
+  display: none;
+}
+
+.entrada-padrao>label:focus {
+  display: initial;
 }

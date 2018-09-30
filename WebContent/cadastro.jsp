@@ -20,23 +20,5 @@
     <title>Autenticacao | Locadora Sem Nome</title>
 </head>
 
-<body>
-    <section id="form-autenticacao">
-        <form action="/locadora/cadastrar" method="post">
-            <div>
-                <label for="nome-usuario">Nome de Usuário</label>
-                <input type="text" name="nomeUsuario" id="nome-usuario" placeholder="Nome de Usuário">
-            </div>
-            <div>
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" placeholder="Senha">
-            </div>
-            <div>
-                <button onclick="location.href='/locadora/cadastrar'">Voltar</button>
-                <button type="submit">Cadastrar</button>
-            </div>
-        </form>
-    </section>
-</body>
 
 </html>
