@@ -31,32 +31,8 @@ public class AutenticacaoController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UsuarioServico usuarioServico = new UsuarioServico();
-		String nomeUsuario = request.getParameter("nomeUsuario");
-		String senha = request.getParameter("senha");
-		Map<String, String> messages = new HashMap<String, String>();
-
-		if (nomeUsuario == null || nomeUsuario.isEmpty()) {
-			messages.put("username", "Please enter username");
-		}
-
-		if (senha == null || senha.isEmpty()) {
-			messages.put("password", "Please enter password");
-		}
-
-		if (messages.isEmpty()) {
-			Usuario usuario = usuarioServico.encontrar(nomeUsuario, senha);
-
-			if (usuario != null) {
-				request.getSession().setAttribute("usuario", usuario);
-				response.sendRedirect(request.getContextPath() + "/home");
-				return;
-			} else {
-				messages.put("login", "Unknown login, please try again");
-			}
-		}
-
-		request.setAttribute("messages", messages);
+		AutenticacaoService autenticacao = new AutenticacaoService();
+		request.getSession().setAttribute("nomeUsuario", autenticacao.fazAutenticacao(request));
 		request.getRequestDispatcher(jspPath).forward(request, response);
 	}
 

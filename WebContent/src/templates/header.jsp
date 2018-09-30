@@ -41,16 +41,16 @@
                             <a href="#">Cadastrar</a>
                         </div>
                     </div>
-                    <div id="menu-entrar">
+                    <div id="menu-entrar" hidden>
                         <div>
                             <input type="text" name="nomeUsuario" id="nome-usuario" placeholder="Nome de Usuário">
                         </div>
                         <div>
                             <input type="password" name="senha" id="senha" placeholder="Senha">
                         </div>
-                        <div>
-                            <button>Entrar</button>
-                            <button onclick="voltarMenuInicial()">Voltar</button>
+                        <div class="botoes-autenticacao">
+                            <button class="botao borda botao-header" onclick="voltarMenuInicial()" tabindex="-1">Voltar</button>
+                            <button class="botao borda botao-header" type="submit">Entrar</button>
                         </div>
                     </div>
                 </div>

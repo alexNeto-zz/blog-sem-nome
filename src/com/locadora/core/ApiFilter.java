@@ -31,7 +31,8 @@ public class ApiFilter implements Filter {
 //			request.setCharacterEncoding("UTF-8");
 			chain.doFilter(request, response);
 		} else {
-			response.sendRedirect(loginURI);
+//			response.sendRedirect(loginURI);
+			System.out.println("iiiiiiiiii parece vc n ta logado");
 		}
 	}
 

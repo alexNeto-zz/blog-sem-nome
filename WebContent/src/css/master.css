@@ -215,32 +215,22 @@ footer>p {
   color: #ecf0f1;
 }
 
-#section-autenticacao {
-  width: 100vw;
-  height: 80vh;
+input[type=text],
+input[type=password] {
+  margin: 9px;
+  font-size: 1em;
+  background-color: #fff;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #d3d4d9;
+}
+
+.botoes-autenticacao {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-}
-
-#form-autenticacao {
-  width: 33%;
-  height: 33%;
-}
-
-.entrada-padrao {
-  width: 66%
-}
-
-.entrada-padrao>input {
-  font-size: 1.2em;
-}
-
-.entrada-padrao>label {
-  display: none;
-}
-
-.entrada-padrao>label:focus {
-  display: initial;
+  margin-bottom: 9px;
+  margin-left: 9px;
+  margin-right: 9px;
+  justify-content: space-between;
 }

@@ -8,10 +8,10 @@ public class UsuarioServico {
 		this.usuarioRepositorio = UsuarioDaoJpa.getInstance();
 	}
 
-	public Usuario encontrar(String nomeUsuario, String senha) {
+	public String encontrar(String nomeUsuario, String senha) {
 		Usuario usuario = usuarioRepositorio.encontrarPeloNome(nomeUsuario);
 		if (usuarioValido(usuario, nomeUsuario, senha))
-			return usuario;
+			return usuario.getNomeUsuario();
 		else
 			return null;
 	}
