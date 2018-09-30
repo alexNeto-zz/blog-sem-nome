@@ -1,21 +1,26 @@
 "use strict";
 
-function fazerAutenticacao() {
-    mudaVisibilidadeMenu(true);
+function preencherAutenticacao() {
+    mudarParaCadastro(false);
     console.log("aaaaaaaaaaaaaaaaaaa");
 }
 
+function preencherCadastro(){
+    mudarParaCadastro(true);
+}
 
 function voltarMenuInicial() {
     mudaVisibilidadeMenu(false);
     document.getElementById("autenticacao").hover();
 }
 
-function mudaVisibilidadeMenu(estaVisivel) {
+function mudarParaCadastro(estaVisivel) {
     const menuEntrar = document.getElementById("menu-autenticacao");
-    menuEntrar.hidden = estaVisivel;
+    menuEntrar.hidden = true;
     const menuAutenticacao = document.getElementById("menu-entrar");
-    menuAutenticacao.hidden = !estaVisivel;
+    menuAutenticacao.hidden = estaVisivel;
+    const menuCadastro = document.getElementById("menu-cadastrar");
+    menuCadastro.hidden = !estaVisivel;
 }
 
 function estaAutenticado() {
@@ -27,6 +32,11 @@ function fazCadastro() {
 }
 
 function fazAutenticacao() {
+    const dados = {
+        nomeUsuario: document.getElementById("nome-usuario").value,
+        senha: document.getElementById("senha").value
+    }
+    post("autenticacao", dados, (dado) => console.log(dado));   
 
 }
 

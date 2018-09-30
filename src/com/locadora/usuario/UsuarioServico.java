@@ -18,10 +18,14 @@ public class UsuarioServico {
 
 	private Boolean usuarioValido(Usuario usuario, String nomeUsuario, String senha) {
 		Boolean result = true;
-		if (!usuario.getNomeUsuario().equals(nomeUsuario))
+		if (usuario == null)
 			result = false;
-		if (!usuario.getSenha().equals(senha)) {
-			result = false;
+		else {
+			if (!usuario.getNomeUsuario().equals(nomeUsuario))
+				result = false;
+			if (!usuario.getSenha().equals(senha)) {
+				result = false;
+			}
 		}
 		return result;
 	}

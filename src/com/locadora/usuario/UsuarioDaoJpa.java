@@ -46,7 +46,7 @@ public class UsuarioDaoJpa implements UsuarioDao {
 
 	public Usuario encontrarPeloNome(String nomeUsuario) {
 		TypedQuery<Usuario> query = entityManager.createQuery(
-				"SELECT usuario FROM usuario usuario WHERE usuario.nome_usuario=:nomeUsuario", Usuario.class);
+				"FROM Usuario u WHERE u.nomeUsuario=:nomeUsuario", Usuario.class);
 		query.setParameter("nomeUsuario", nomeUsuario);
 		try {
 			return query.getSingleResult();

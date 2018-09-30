@@ -1,17 +1,12 @@
 package com.locadora.autenticacao;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.locadora.usuario.Usuario;
-import com.locadora.usuario.UsuarioServico;
 
 @WebServlet("/autenticacao")
 public class AutenticacaoController extends HttpServlet {
