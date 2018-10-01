@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.blog.core.TipoUsuario;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -13,8 +15,8 @@ public class Usuario {
 	@Id
 	@GeneratedValue
 	private Long identificador;
-	@Column
-	private String nomeUsuario;
+	@Column(unique = true)
+	private String apelido;
 	@Column
 	private String email;
 	@Column
@@ -23,6 +25,8 @@ public class Usuario {
 	private String ultimoNome;
 	@Column
 	private String senha;
+	@Column
+	private TipoUsuario tipoUsuario;
 
 	public Long getIdentificador() {
 		return identificador;
@@ -32,12 +36,12 @@ public class Usuario {
 		this.identificador = identificador;
 	}
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
+	public String getApelido() {
+		return apelido;
 	}
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
 	}
 
 	public String getEmail() {
@@ -72,4 +76,4 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-}
+	}

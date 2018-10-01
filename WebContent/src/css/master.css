@@ -1,6 +1,6 @@
 *,
 body {
-  font-family: 'Gilda Display', serif;
+  font-family: "Gilda Display", serif;
   color: #565254;
 }
 
@@ -61,8 +61,10 @@ header {
   flex-flow: row wrap;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 @media (max-width: 750px) {
@@ -83,7 +85,7 @@ header {
 }
 
 #logo {
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Abril Fatface", cursive;
   font-size: 3em;
 }
 
@@ -121,27 +123,6 @@ header {
   justify-content: flex-end;
 }
 
-#filtro-pesquisa {
-  background-color: #ffffff;
-  margin-top: 10px;
-  min-width: 300px;
-  width: 15vw;
-  height: 600px;
-}
-
-@media (max-width: 750px) {
-  #filtro-pesquisa {
-    left: 10px;
-  }
-}
-
-@media (max-width: 350px) {
-  #filtro-pesquisa {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
 .drop-container {
   position: relative;
   display: inline-block;
@@ -174,22 +155,8 @@ header {
   display: block;
 }
 
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 200px;
-  color: #ecf0f1;
-  background-color: #565254;
-}
-
-footer>p {
-  color: #ecf0f1;
-}
-
-input[type=text],
-input[type=password] {
+input[type="text"],
+input[type="password"] {
   margin: 9px;
   font-size: 1em;
   background-color: #fff;
@@ -208,12 +175,13 @@ input[type=password] {
   justify-content: space-between;
 }
 
-
-.postagens {
+.topicos {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: flex-start;
+}
 
+.topicos > article {
 }
