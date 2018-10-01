@@ -1,13 +1,12 @@
-package com.locadora.autenticacao;
+package com.blog.autenticacao;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.locadora.usuario.UsuarioServico;
+import com.blog.usuario.UsuarioServico;
 
 public class AutenticacaoService {
 
 	protected String fazAutenticacao(HttpServletRequest request) {
-		System.out.println(request.getParameter("nomeUsuario"));
 		String usuario = request.getParameter("nomeUsuario");
 		String senha = request.getParameter("senha");
 		UsuarioServico usuarioServico = new UsuarioServico();

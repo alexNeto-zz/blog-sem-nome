@@ -1,6 +1,4 @@
-package com.locadora.usuario;
-
-import java.util.Date;
+package com.blog.usuario;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,29 +16,19 @@ public class Usuario {
 	@Column
 	private String nomeUsuario;
 	@Column
+	private String email;
+	@Column
 	private String primeiroNome;
 	@Column
 	private String ultimoNome;
 	@Column
 	private String senha;
-	@Column
-	private Boolean emailVerificado;
-	@Column
-	private Date Datanascimento;
-	@Column
-	private String cpf;
-	@Column
-	private String cnpj;
-	@Column
-	private String rg;
-	@Column
-	private String cnh;
 
-	public Long getId() {
+	public Long getIdentificador() {
 		return identificador;
 	}
 
-	public void setId(Long identificador) {
+	public void setIdentificador(Long identificador) {
 		this.identificador = identificador;
 	}
 
@@ -50,6 +38,14 @@ public class Usuario {
 
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPrimeiroNome() {
@@ -76,51 +72,4 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Boolean getEmailVerificado() {
-		return emailVerificado;
-	}
-
-	public void setEmailVerificado(Boolean emailVerificado) {
-		this.emailVerificado = emailVerificado;
-	}
-
-	public Date getDatanascimento() {
-		return Datanascimento;
-	}
-
-	public void setDatanascimento(Date datanascimento) {
-		Datanascimento = datanascimento;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getCnpj() {
-		return cnpj;
-	}
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-
-	public String getRg() {
-		return rg;
-	}
-
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
-
-	public String getCnh() {
-		return cnh;
-	}
-
-	public void setCnh(String cnh) {
-		this.cnh = cnh;
-	}
 }

@@ -1,4 +1,4 @@
-package com.locadora.autenticacao;
+package com.blog.autenticacao;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.locadora.core;
+package com.blog.core;
 
 import java.io.IOException;
 

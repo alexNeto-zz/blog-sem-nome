@@ -1,6 +1,0 @@
-package com.locadora.compartilhado.enumeradores;
-
-public enum Categoria {
-	MINI, ECONOMICO, COMPACTO, STANDARD, INTERMEDIARIO, PREMIUM, FULL_SIZE, SUV, ESPECIAL, LUXO, CONVERSIVEL, MINIVAN, VAN, UTILITARIO, PICK_UP;
-
-}

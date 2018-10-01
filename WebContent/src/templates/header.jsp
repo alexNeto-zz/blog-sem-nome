@@ -7,14 +7,7 @@
     estaLogado = true;
 %>
 <header>
-    <div class="drop-container">
-        <button class="botao borda botao-header margem-inferior">Navegação</button>
-        <div class="drop-conteudo borda">
-            <a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
-        </div>
-    </div>
-
-    <h1 id="logo">Locadora Sem Nome</h1>
+    <h1 id="logo">Blog Sem Nome</h1>
 
     <div class="drop-container">
         <c:choose>

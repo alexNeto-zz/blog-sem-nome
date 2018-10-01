@@ -1,4 +1,4 @@
-package com.locadora.usuario;
+package com.blog.usuario;
 
 import java.util.List;
 

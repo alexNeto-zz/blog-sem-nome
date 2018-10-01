@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="./src/css/master.css">
 
 	<script src="src/js/httpServico.js"></script>
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<title>Locadora Sem Nome</title>
@@ -24,19 +24,8 @@
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
 
+	<section class="margem-conteudo-principal borda"></section>
 
-	<main class="container margem-container">
-		<nav>
-			<div class="container column">
-				<div class="container row">
-					<button class="filtro borda botao">filtro</button>
-					<button class="filtro borda botao">filtro</button>
-				</div>
-				<div id="filtro-pesquisa" class="borda"></div>
-			</div>
-		</nav>
-		<section class="margem-conteudo-principal borda"></section>
-	</main>
 	<jsp:include page="./src/templates/footer.html" />
 </body>
 

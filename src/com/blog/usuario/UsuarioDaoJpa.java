@@ -1,4 +1,4 @@
-package com.locadora.usuario;
+package com.blog.usuario;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-import com.locadora.core.ConexaoFabrica;
+import com.blog.core.ConexaoFabrica;
 
 public class UsuarioDaoJpa implements UsuarioDao {
 
@@ -71,7 +71,7 @@ public class UsuarioDaoJpa implements UsuarioDao {
 		Boolean result = true;
 		try {
 			entityManager.getTransaction().begin();
-			Usuario usuarioParaDeletar = entityManager.find(Usuario.class, usuario.getId());
+			Usuario usuarioParaDeletar = entityManager.find(Usuario.class, usuario.getIdentificador());
 			entityManager.remove(usuarioParaDeletar);
 			entityManager.getTransaction().commit();
 		} catch (Exception ex) {
