@@ -24,7 +24,180 @@
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
 
-	<section class="margem-conteudo-principal borda"></section>
+	<section class="margem-conteudo-principal borda postagens">
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+		<article>
+			<h2>titulo do post</h2>
+			<h3>sub titulo do post</h3>
+			<p>data</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+				dolorem?</p>
+
+		</article>
+
+	</section>
 
 	<jsp:include page="./src/templates/footer.html" />
 </body>
