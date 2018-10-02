@@ -2,7 +2,6 @@
 
 function preencherAutenticacao() {
     mudarParaCadastro(false);
-    console.log("aaaaaaaaaaaaaaaaaaa");
 }
 
 function preencherCadastro(){

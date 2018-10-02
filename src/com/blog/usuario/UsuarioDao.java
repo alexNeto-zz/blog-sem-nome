@@ -1,20 +1,9 @@
 package com.blog.usuario;
 
-import java.util.List;
+import com.blog.core.Dao;
 
-public interface UsuarioDao {
-	public Usuario inserir(Usuario usuario);
+public interface UsuarioDao extends Dao<Usuario> {
 
-	public Usuario encontrarPeloIdentificador(Long id);
-	
 	public Usuario encontrarPeloNome(String nomeUsuario);
-
-	public List<Usuario> encontrarTodos();
-
-	public Usuario atualizar(Usuario atual, Usuario novo);
-
-	public boolean apaga(Usuario usuario);
-	
-	public boolean apagaPeloIdentificador(Long id);
 
 }

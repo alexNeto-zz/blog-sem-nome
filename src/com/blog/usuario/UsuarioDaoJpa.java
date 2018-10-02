@@ -13,7 +13,7 @@ public class UsuarioDaoJpa implements UsuarioDao {
 	private static UsuarioDaoJpa instance;
 	private EntityManager entityManager;
 
-	public static UsuarioDaoJpa getInstance() {
+	public static UsuarioDaoJpa pegaInstancia() {
 		if (instance == null) {
 			instance = new UsuarioDaoJpa();
 		}

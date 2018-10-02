@@ -1,9 +1,9 @@
 "use strict";
 
-function get(url, sucesso, falha) {
-    console.log(pegaUrl());
+function get(url, dado, sucesso, falha) {
     $.ajax({
         url: pegaUrl() + url,
+        data: dado,
         type: "GET",
         success: sucesso,
         error: falha !== undefined ? falha : erro
@@ -11,7 +11,6 @@ function get(url, sucesso, falha) {
 }
 
 function post(url, dado, sucesso, falha) {
-    console.log(pegaUrl());
     $.ajax({
         url: pegaUrl() + url,
         data: dado,

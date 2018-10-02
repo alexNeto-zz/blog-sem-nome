@@ -5,7 +5,7 @@ public class UsuarioServico {
 	private UsuarioDao usuarioRepositorio;
 
 	public UsuarioServico() {
-		this.usuarioRepositorio = UsuarioDaoJpa.getInstance();
+		this.usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
 	}
 
 	public String encontrar(String nomeUsuario, String senha) {

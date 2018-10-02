@@ -9,7 +9,7 @@ public class ConexaoFabrica {
 	private static EntityManager entityManager;
 
 	public static EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("locadora-pu");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("blog-pu");
 		if (entityManager == null) {
 			entityManager = factory.createEntityManager();
 		}
