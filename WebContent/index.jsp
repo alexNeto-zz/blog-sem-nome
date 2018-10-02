@@ -6,6 +6,9 @@
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Gilda+Display" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+
 
 	<script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -24,182 +27,479 @@
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
 
-	<section class="margem-conteudo-principal borda postagens">
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+	<section class="margem-conteudo-principal borda topicos">
+		<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
 		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+		
+		<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+					<div class="conteudo">
+						<h2>titulo do post</h2>
+						<h3>data de postagem</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+							aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+							dolorem?</p>
+		
+					</div>
+					<div class="botao-ler">
+						<button class="botao borda botao-header">Ler</button>
+					</div>
+				</article>	<article class="borda">
+						<div class="conteudo">
+							<h2>titulo do post</h2>
+							<h3>data de postagem</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+								aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+								dolorem?</p>
+			
+						</div>
+						<div class="botao-ler">
+							<button class="botao borda botao-header">Ler</button>
+						</div>
+					</article>	<article class="borda">
+							<div class="conteudo">
+								<h2>titulo do post</h2>
+								<h3>data de postagem</h3>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+									aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+									dolorem?</p>
+				
+							</div>
+							<div class="botao-ler">
+								<button class="botao borda botao-header">Ler</button>
+							</div>
+						</article>	<article class="borda">
+								<div class="conteudo">
+									<h2>titulo do post</h2>
+									<h3>data de postagem</h3>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+										aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+										dolorem?</p>
+					
+								</div>
+								<div class="botao-ler">
+									<button class="botao borda botao-header">Ler</button>
+								</div>
+							</article>	<article class="borda">
+									<div class="conteudo">
+										<h2>titulo do post</h2>
+										<h3>data de postagem</h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+											aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+											dolorem?</p>
+						
+									</div>
+									<div class="botao-ler">
+										<button class="botao borda botao-header">Ler</button>
+									</div>
+								</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+					<div class="conteudo">
+						<h2>titulo do post</h2>
+						<h3>data de postagem</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+							aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+							dolorem?</p>
+		
+					</div>
+					<div class="botao-ler">
+						<button class="botao borda botao-header">Ler</button>
+					</div>
+				</article>	<article class="borda">
+						<div class="conteudo">
+							<h2>titulo do post</h2>
+							<h3>data de postagem</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+								aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+								dolorem?</p>
+			
+						</div>
+						<div class="botao-ler">
+							<button class="botao borda botao-header">Ler</button>
+						</div>
+					</article>	<article class="borda">
+							<div class="conteudo">
+								<h2>titulo do post</h2>
+								<h3>data de postagem</h3>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+									aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+									dolorem?</p>
+				
+							</div>
+							<div class="botao-ler">
+								<button class="botao borda botao-header">Ler</button>
+							</div>
+						</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+					<div class="conteudo">
+						<h2>titulo do post</h2>
+						<h3>data de postagem</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+							aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+							dolorem?</p>
+		
+					</div>
+					<div class="botao-ler">
+						<button class="botao borda botao-header">Ler</button>
+					</div>
+				</article>	<article class="borda">
+						<div class="conteudo">
+							<h2>titulo do post</h2>
+							<h3>data de postagem</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+								aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+								dolorem?</p>
+			
+						</div>
+						<div class="botao-ler">
+							<button class="botao borda botao-header">Ler</button>
+						</div>
+					</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+					<div class="conteudo">
+						<h2>titulo do post</h2>
+						<h3>data de postagem</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+							aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+							dolorem?</p>
+		
+					</div>
+					<div class="botao-ler">
+						<button class="botao borda botao-header">Ler</button>
+					</div>
+				</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+					<div class="conteudo">
+						<h2>titulo do post</h2>
+						<h3>data de postagem</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+							aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+							dolorem?</p>
+		
+					</div>
+					<div class="botao-ler">
+						<button class="botao borda botao-header">Ler</button>
+					</div>
+				</article>	<article class="borda">
+						<div class="conteudo">
+							<h2>titulo do post</h2>
+							<h3>data de postagem</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+								aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+								dolorem?</p>
+			
+						</div>
+						<div class="botao-ler">
+							<button class="botao borda botao-header">Ler</button>
+						</div>
+					</article>	<article class="borda">
+							<div class="conteudo">
+								<h2>titulo do post</h2>
+								<h3>data de postagem</h3>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+									aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+									dolorem?</p>
+				
+							</div>
+							<div class="botao-ler">
+								<button class="botao borda botao-header">Ler</button>
+							</div>
+						</article>	<article class="borda">
+			<div class="conteudo">
+				<h2>titulo do post</h2>
+				<h3>data de postagem</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+					aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+					dolorem?</p>
 
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
-
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
-
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
-
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
-
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
-
-		</article>
-		<article>
-			<h2>titulo do post</h2>
-			<h3>sub titulo do post</h3>
-			<p>data</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
-				aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
-				dolorem?</p>
-
-		</article>
-
+			</div>
+			<div class="botao-ler">
+				<button class="botao borda botao-header">Ler</button>
+			</div>
+		</article>	<article class="borda">
+				<div class="conteudo">
+					<h2>titulo do post</h2>
+					<h3>data de postagem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+						aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+						dolorem?</p>
+	
+				</div>
+				<div class="botao-ler">
+					<button class="botao borda botao-header">Ler</button>
+				</div>
+			</article>	<article class="borda">
+					<div class="conteudo">
+						<h2>titulo do post</h2>
+						<h3>data de postagem</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquam reprehenderit rerum veniam temporibus vero
+							aut molestias, totam ipsa placeat perferendis aspernatur iusto quae provident, eaque minus iure, necessitatibus
+							dolorem?</p>
+		
+					</div>
+					<div class="botao-ler">
+						<button class="botao borda botao-header">Ler</button>
+					</div>
+				</article>
 	</section>
-
-	<jsp:include page="./src/templates/footer.html" />
 </body>
 
 </html>

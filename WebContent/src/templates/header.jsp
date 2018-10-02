@@ -3,12 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <% 
-    Boolean estaLogado = session != null && session.getAttribute("nomeUsuario") != null;
+    Boolean estaLogado = session != null && session.getAttribute("apelido") != null;
     estaLogado = true;
 %>
 <header>
     <h1 id="logo">Blog Sem Nome</h1>
-
+    
+    <div class="espaco"></div>
+    
     <div class="drop-container">
         <c:choose>
             <c:when test="${estaLogado == true}">
