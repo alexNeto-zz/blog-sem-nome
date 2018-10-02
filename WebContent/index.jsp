@@ -6,7 +6,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <html>
 
 <head>
@@ -17,24 +16,21 @@
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
 
-	<%
-		TopicoServico topicoServico = new TopicoServico();
-		List<Topico> topicos = topicoServico.pegaTodos();
-	%>
 	<section class="margem-conteudo-principal borda topicos">
-		<c:forEach items="${topicos}" var="topico">
-			<article class="borda">
-				<div class="conteudo">
-					<h2>${topico.getTitulo()}</h2>
-					<h3>${topico.getDataCriacao()}</h3>
-					<p>${topico.getConteudo()}</p>
-				</div>
-				<div class="botao-ler">
-					<button class="botao borda botao-header" onclick="verTopico(${topico.getIdentificador})">Ler</button>
-				</div>
-			</article>
-		</c:forEach>
-
+	<%
+            TopicoServico topicoServico = new TopicoServico();
+		List<Topico> topicos = topicoServico.pegaTodos();
+            for (Topico topico : topicos) {
+                out.print("<article class=\"borda\">");
+                out.print("<div class=\"conteudo\">");
+				out.print("<h2>" + topico.getTitulo() + "</h2>");
+				out.print("<h3>" + topico.getDataCriacao() + "</h3>");
+				out.print("<p>" + topico.getConteudo() + "</p>");
+				out.print("</div><div class=\"botao-ler\">");
+				out.print("<button class=\"botao borda botao-header\" onclick=\"lerTopico(" + topico.getIdentificador() + ")\">Ler</button>");
+				out.print("</div></article>");
+            }
+        %>
 	</section>
 </body>
 

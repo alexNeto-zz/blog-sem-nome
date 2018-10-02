@@ -1,11 +1,13 @@
 package com.blog.topico;
 
-import java.util.Date;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "topico")
 public class Topico {
 
 	@Id
@@ -16,7 +18,7 @@ public class Topico {
 	@Column
 	private String conteudo;
 	@Column
-	private Date dataCriacao;
+	private String dataCriacao;
 
 	public Long getIdentificador() {
 		return identificador;
@@ -42,11 +44,11 @@ public class Topico {
 		this.conteudo = conteudo;
 	}
 
-	public Date getDataCriacao() {
+	public String getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(String dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
