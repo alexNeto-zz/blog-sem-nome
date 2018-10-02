@@ -219,3 +219,39 @@ article>div>p {
   align-self: center;
   margin-right: 30px;
 }
+
+section>h1 {
+  font-family: "Gilda", serif;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 35px;
+}
+
+section>h2 {
+  margin-left: 35px;
+  margin-top: -30px;
+}
+
+section>p {
+  margin: 35px;
+  line-height: 1.6;
+  font-size: 1.2em;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.comentario {
+  margin-top: -30px;
+}
+
+.comentario>h1 {
+  font-weight: initial;
+  font-size: 1em;
+}
+
+.comentario>p {
+  margin: 5px;
+  margin-left: 35px;
+  margin-bottom: 35px;
+  font-size: 1em;
+}
