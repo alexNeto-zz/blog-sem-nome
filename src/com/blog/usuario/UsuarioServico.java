@@ -11,7 +11,7 @@ public class UsuarioServico {
 	public String encontrar(String nomeUsuario, String senha) {
 		Usuario usuario = usuarioRepositorio.encontrarPeloNome(nomeUsuario);
 		if (usuarioValido(usuario, nomeUsuario, senha))
-			return usuario.getNomeUsuario();
+			return usuario.getApelido();
 		else
 			return null;
 	}
@@ -21,7 +21,7 @@ public class UsuarioServico {
 		if (usuario == null)
 			result = false;
 		else {
-			if (!usuario.getNomeUsuario().equals(nomeUsuario))
+			if (!usuario.getApelido().equals(nomeUsuario))
 				result = false;
 			if (!usuario.getSenha().equals(senha)) {
 				result = false;
