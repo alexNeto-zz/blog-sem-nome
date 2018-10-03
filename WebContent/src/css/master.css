@@ -257,3 +257,13 @@ section>p {
   margin-bottom: 35px;
   font-size: 1em;
 }
+
+.botao-flutuante{
+	position:fixed;
+	bottom:40px;
+	right:40px;
+  text-align:center;
+  text-decoration: none;
+}
+
+

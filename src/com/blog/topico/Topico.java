@@ -1,10 +1,16 @@
 package com.blog.topico;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.blog.comentario.Comentario;
 
 @Entity
 @Table(name = "topico")
@@ -19,6 +25,9 @@ public class Topico {
 	private String conteudo;
 	@Column
 	private String dataCriacao;
+	@OneToMany
+    @JoinColumn(name = "identificador_topico")
+    private List<Comentario> eventos;
 
 	public Long getIdentificador() {
 		return identificador;

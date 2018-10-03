@@ -11,6 +11,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
+import com.blog.comentario.Comentario;
 import com.blog.topico.Topico;
 import com.blog.topico.TopicoDao;
 import com.blog.topico.TopicoDaoJpa;
@@ -63,7 +64,15 @@ public class CargaInicial implements Filter {
 			topico.setConteudo(lorem.getWords(100, 1000));
 			topico.setTitulo(lorem.getWords(4, 7));
 			topico.setDataCriacao(new Date().toString());
-			topicoRepositorio.inserir(topico);
+			Comentario comentario = new Comentario();
+			comentario.setIdentificadorTopico(topicoRepositorio.inserir(topico).getIdentificador());
+			for(int j = 0; j < Math.random() * 10; j++) {
+				Usuario usuario = new Usuario();
+				usuario.setApelido("nome");
+				comentario.setAutor(usuario);
+				comentario.setDataCriacao(new Date());
+				comentario.setConteudo(lorem.getWords(2, 100));
+			}
 		}
 	}
 

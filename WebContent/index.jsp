@@ -63,7 +63,9 @@
 				corrupti
 			</p>
 		</section>
+	<a onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
 	</div>
+	
 </body>
 
 </html>

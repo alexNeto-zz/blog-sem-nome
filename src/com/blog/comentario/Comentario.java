@@ -3,21 +3,38 @@ package com.blog.comentario;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.blog.usuario.Usuario;
 
+@Entity
+@Table(name = "comentario")
 public class Comentario {
 	@Id
 	@GeneratedValue
 	private Long identificador;
-	@Column
+	@OneToOne(fetch = FetchType.LAZY)
 	private Usuario autor;
 	@Column
 	private String conteudo;
 	@Column
 	private Date dataCriacao;
+	@Column(name = "identificador_topico")
+	private Long identificadorTopico;
+
+	public Long getIdentificadorTopico() {
+		return identificadorTopico;
+	}
+
+	public void setIdentificadorTopico(Long identificadorTopico) {
+		this.identificadorTopico = identificadorTopico;
+	}
 
 	public Long getIdentificador() {
 		return identificador;
