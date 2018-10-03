@@ -76,4 +76,12 @@ public class Usuario {
 		this.senha = senha;
 	}
 
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
 	}

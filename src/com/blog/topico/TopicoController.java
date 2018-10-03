@@ -1,6 +1,7 @@
 package com.blog.topico;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,12 +16,14 @@ public class TopicoController extends HttpServlet {
 	* 
 	*/
 	private static final long serialVersionUID = -112315248180092748L;
-	private String jspPath = "topico.jsp";
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher(jspPath).forward(request, response);
+		response.setContentType("application/json");
+		PrintWriter resposta = response.getWriter();
+		resposta.print(new TopicoServico().pegaPeloIdentificador(request.getParameter("topico")));
+		resposta.flush();
 	}
 
 	@Override

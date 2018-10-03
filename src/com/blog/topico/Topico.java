@@ -15,7 +15,7 @@ public class Topico {
 	private Long identificador;
 	@Column
 	private String titulo;
-	@Column
+	@Column(columnDefinition = "text")
 	private String conteudo;
 	@Column
 	private String dataCriacao;
@@ -38,6 +38,9 @@ public class Topico {
 
 	public String getConteudo() {
 		return conteudo;
+	}
+	public String getConteudoTamanho200() {
+		return conteudo.substring(0, 200);
 	}
 
 	public void setConteudo(String conteudo) {

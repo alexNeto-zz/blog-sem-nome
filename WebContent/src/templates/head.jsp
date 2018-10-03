@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="./src/css/master.css">
 
 <script src="src/js/httpServico.js"></script>
+<script  src="src/js/principal.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="favicon.ico">

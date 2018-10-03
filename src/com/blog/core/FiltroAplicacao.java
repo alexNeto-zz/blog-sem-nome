@@ -13,12 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/usuario/*") // só pra conseguir prgramar antes de faser o login
-public class ApiFilter implements Filter {
+@WebFilter("/usuario/*")
+public class FiltroAplicacao implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 			throws ServletException, IOException {
+
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		HttpSession session = request.getSession(false);
@@ -28,10 +29,10 @@ public class ApiFilter implements Filter {
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
 
 		if (loggedIn || loginRequest) {
-//			request.setCharacterEncoding("UTF-8");
+			// request.setCharacterEncoding("UTF-8");
 			chain.doFilter(request, response);
 		} else {
-//			response.sendRedirect(loginURI);
+			// response.sendRedirect(loginURI);
 			System.out.println("iiiiiiiiii parece vc n ta logado");
 		}
 	}
