@@ -1,6 +1,6 @@
 package com.blog.topico;
 
-import com.blog.core.Dao;
+import com.blog.nucleo.Dao;
 
 public interface TopicoDao extends Dao<Topico>{
 

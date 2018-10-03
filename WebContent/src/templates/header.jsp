@@ -4,7 +4,6 @@
 
 <% 
     Boolean estaLogado = session != null && session.getAttribute("apelido") != null;
-    estaLogado = true;
 %>
 <header>
     <h1 id="logo">Blog Sem Nome</h1>
@@ -38,7 +37,7 @@
                     </div>
                     <div id="menu-entrar" hidden>
                         <div>
-                            <input type="text" name="nomeUsuario" id="nome-usuario" placeholder="Nome de Usuário">
+                            <input type="text" name="nomeUsuario" id="apelido" placeholder="Nome de Usuário">
                         </div>
                         <div>
                             <input type="password" name="senha" id="senha" placeholder="Senha">
@@ -50,13 +49,13 @@
                     </div>
                     <div id="menu-cadastrar" hidden>
                         <div>
-                            <input type="text" name="nomeUsuario" id="nome-usuario" placeholder="Nome de Usuário">
+                            <input type="text" name="nomeUsuario" id="novo-apelido" placeholder="Nome de Usuário">
                         </div>
                         <div>
                             <input type="text" name="email" id="email" placeholder="E-mail">
                         </div>
                         <div>
-                            <input type="password" name="senha" id="senha" placeholder="Senha">
+                            <input type="password" name="senha" id="nova-senha" placeholder="Senha">
                         </div>
                         <div>
                             <input type="password" name="comfirmaSenha" id="comfirma-senha" placeholder="Comfirmação da Senha">

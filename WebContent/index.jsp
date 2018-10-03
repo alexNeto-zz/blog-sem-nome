@@ -43,29 +43,12 @@
 		</section>
 
 		<section class="borda margem-conteudo-principal comentario">
-			<h1>Lorem ipsum dolor sit amet consectetur </h1>
-			<h2>21/21/2112</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolores blanditiis impedit, quidem, dolorem
-				corrupti
-			</p>
+			<h1>Comentários</h1>
 		</section>
-		<section class="borda margem-conteudo-principal comentario">
-			<h1>Lorem ipsum dolor sit amet consectetur </h1>
-			<h2>21/21/2112</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolores blanditiis impedit, quidem, dolorem
-				corrupti
-			</p>
-		</section>
-		<section class="borda margem-conteudo-principal comentario">
-			<h1>Lorem ipsum dolor sit amet consectetur </h1>
-			<h2>21/21/2112</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolores blanditiis impedit, quidem, dolorem
-				corrupti
-			</p>
-		</section>
-	<a onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
+		<div id="comentarios"></div>
+		<a onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
 	</div>
-	
+
 </body>
 
 </html>

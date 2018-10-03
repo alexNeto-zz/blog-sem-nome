@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-import com.blog.core.ConexaoFabrica;
+import com.blog.nucleo.ConexaoFabrica;
 
 public class UsuarioDaoJpa implements UsuarioDao {
 
@@ -44,10 +44,10 @@ public class UsuarioDaoJpa implements UsuarioDao {
 		return entityManager.find(Usuario.class, id);
 	}
 
-	public Usuario encontrarPeloNome(String nomeUsuario) {
+	public Usuario encontrarPeloNome(String apelido) {
 		TypedQuery<Usuario> query = entityManager.createQuery(
-				"FROM Usuario u WHERE u.nomeUsuario=:nomeUsuario", Usuario.class);
-		query.setParameter("nomeUsuario", nomeUsuario);
+				"FROM Usuario u WHERE u.apelido=:apelido", Usuario.class);
+		query.setParameter("apelido", apelido);
 		try {
 			return query.getSingleResult();
 		} catch (NoResultException e) {

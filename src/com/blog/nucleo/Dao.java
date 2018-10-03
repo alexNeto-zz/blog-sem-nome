@@ -1,4 +1,4 @@
-package com.blog.core;
+package com.blog.nucleo;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.blog.usuario;
 
-import com.blog.core.Dao;
+import com.blog.nucleo.Dao;
 
 public interface UsuarioDao extends Dao<Usuario> {
 

@@ -1,4 +1,4 @@
-package com.blog.core;
+package com.blog.nucleo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

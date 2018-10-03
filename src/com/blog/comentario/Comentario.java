@@ -4,14 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.blog.usuario.Usuario;
 
 @Entity
 @Table(name = "comentario")
@@ -19,13 +14,13 @@ public class Comentario {
 	@Id
 	@GeneratedValue
 	private Long identificador;
-	@OneToOne(fetch = FetchType.LAZY)
-	private Usuario autor;
 	@Column
+	private String apelido;
+	@Column(columnDefinition = "text")
 	private String conteudo;
 	@Column
 	private Date dataCriacao;
-	@Column(name = "identificador_topico")
+	@Column
 	private Long identificadorTopico;
 
 	public Long getIdentificadorTopico() {
@@ -44,12 +39,12 @@ public class Comentario {
 		this.identificador = identificador;
 	}
 
-	public Usuario getAutor() {
-		return autor;
+	public String getApelido() {
+		return apelido;
 	}
 
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
 	}
 
 	public String getConteudo() {

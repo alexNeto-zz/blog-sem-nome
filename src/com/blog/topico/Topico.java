@@ -6,9 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.blog.comentario.Comentario;
 
@@ -25,9 +24,16 @@ public class Topico {
 	private String conteudo;
 	@Column
 	private String dataCriacao;
-	@OneToMany
-    @JoinColumn(name = "identificador_topico")
-    private List<Comentario> eventos;
+	@Transient
+	private List<Comentario> comentarios;
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
 
 	public Long getIdentificador() {
 		return identificador;
@@ -48,6 +54,7 @@ public class Topico {
 	public String getConteudo() {
 		return conteudo;
 	}
+
 	public String getConteudoTamanho200() {
 		return conteudo.substring(0, 200);
 	}

@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.blog.core.TipoUsuario;
+import com.blog.nucleo.TipoUsuario;
 
 @Entity
 @Table(name = "usuario")

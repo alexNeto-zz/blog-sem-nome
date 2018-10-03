@@ -1,4 +1,4 @@
-package com.blog.core;
+package com.blog.nucleo;
 
 public enum TipoUsuario {
 

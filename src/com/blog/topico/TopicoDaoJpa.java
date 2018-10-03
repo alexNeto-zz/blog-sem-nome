@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import com.blog.core.ConexaoFabrica;
+import com.blog.nucleo.ConexaoFabrica;
 
 public class TopicoDaoJpa implements TopicoDao {
 

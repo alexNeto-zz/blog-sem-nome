@@ -1,4 +1,4 @@
-package com.blog.core;
+package com.blog.nucleo;
 
 import java.io.IOException;
 import java.util.Date;
@@ -12,6 +12,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 import com.blog.comentario.Comentario;
+import com.blog.comentario.ComentarioDao;
+import com.blog.comentario.ComentarioDaoJpa;
 import com.blog.topico.Topico;
 import com.blog.topico.TopicoDao;
 import com.blog.topico.TopicoDaoJpa;
@@ -49,14 +51,19 @@ public class CargaInicial implements Filter {
 	}
 
 	private void rodarCargaInicial() {
-		criaUsuariosDeTeste();
-		criaTopicosDeTeste();
-		rodouCargaInicial = true;
+		try {
+			criaUsuariosDeTeste();
+			criaTopicosDeTeste();
+			rodouCargaInicial = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
-	private void criaTopicosDeTeste() {
+	private void criaTopicosDeTeste() throws InterruptedException {
 		Lorem lorem = LoremIpsum.getInstance();
 		TopicoDao topicoRepositorio = TopicoDaoJpa.pegaInstancia();
+		ComentarioDao comentarioRepositorio = ComentarioDaoJpa.pegaInstancia();
 		if (topicoRepositorio.encontrarTodos().size() > 10)
 			return;
 		for (int i = 0; i < 12; i++) {
@@ -64,19 +71,21 @@ public class CargaInicial implements Filter {
 			topico.setConteudo(lorem.getWords(100, 1000));
 			topico.setTitulo(lorem.getWords(4, 7));
 			topico.setDataCriacao(new Date().toString());
-			Comentario comentario = new Comentario();
-			comentario.setIdentificadorTopico(topicoRepositorio.inserir(topico).getIdentificador());
-			for(int j = 0; j < Math.random() * 10; j++) {
-				Usuario usuario = new Usuario();
-				usuario.setApelido("nome");
-				comentario.setAutor(usuario);
+			topicoRepositorio.inserir(topico);
+			Thread.sleep(500);
+			for (int j = 0; j < 3; j++) {
+				Comentario comentario = new Comentario();
+				comentario.setIdentificadorTopico(topico.getIdentificador());
+				comentario.setApelido("nome");
 				comentario.setDataCriacao(new Date());
 				comentario.setConteudo(lorem.getWords(2, 100));
+				comentarioRepositorio.inserir(comentario);
+				Thread.sleep(500);
 			}
 		}
 	}
 
-	private void criaUsuariosDeTeste() {
+	private void criaUsuariosDeTeste() throws InterruptedException {
 		UsuarioDao usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
 		Usuario usuario = new Usuario();
 		usuario.setApelido("nome");
@@ -84,6 +93,8 @@ public class CargaInicial implements Filter {
 		usuario.setSenha("hunter2");
 		usuario.setTipoUsuario(TipoUsuario.NORMAL);
 		usuarioRepositorio.inserir(usuario);
+		Thread.sleep(500);
+		usuario = new Usuario();
 		usuario.setApelido("algo");
 		usuario.setEmail("algo@email.com");
 		usuario.setSenha("hunter2");
