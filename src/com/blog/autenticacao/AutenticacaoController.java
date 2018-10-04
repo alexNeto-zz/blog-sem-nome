@@ -25,8 +25,11 @@ public class AutenticacaoController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		AutenticacaoService autenticacao = new AutenticacaoService();
-		request.getSession().setAttribute("apelido", autenticacao.fazAutenticacao(request));
-		response.setStatus(200);
+		String apelido = autenticacao.fazAutenticacao(request);
+		if (apelido != null)
+			request.getSession().setAttribute("apelido", apelido);
+		else
+			response.setStatus(403);
 	}
 
 }

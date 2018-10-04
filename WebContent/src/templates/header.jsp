@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<% 
-    Boolean estaLogado = session != null && session.getAttribute("apelido") != null;
-%>
 <header>
     <h1 id="logo">Blog Sem Nome</h1>
     
@@ -12,7 +9,7 @@
     
     <div class="drop-container">
         <c:choose>
-            <c:when test="${estaLogado == true}">
+            <c:when test="${estaLogado eq true}">
                 <button id="autenticacao" class="botao borda botao-header margem-inferior">
                     <p>TODO</p>
                 </button>

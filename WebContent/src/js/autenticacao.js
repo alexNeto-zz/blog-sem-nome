@@ -32,7 +32,7 @@ function fazCadastro() {
 
 function fazAutenticacao() {
     const dados = {
-        apelido: document.getElementById("nome-usuario").value,
+        apelido: document.getElementById("apelido").value,
         senha: document.getElementById("senha").value
     }
     post("autenticacao", dados, (dado) => console.log(dado));   
