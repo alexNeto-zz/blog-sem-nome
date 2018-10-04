@@ -59,7 +59,7 @@
                         </div>
                         <div class="botoes-autenticacao">
                             <button class="botao borda botao-header" onclick="preencherAutenticacao()" tabindex="-1">Entrar</button>
-                            <button class="botao borda botao-header" type="submit">Cadastrar</button>
+                            <button class="botao borda botao-header" onclick="fazCadastro()">Cadastrar</button>
                         </div>
                     </div>
                 </div>

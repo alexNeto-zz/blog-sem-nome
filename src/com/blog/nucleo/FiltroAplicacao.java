@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/usuario/*")
+@WebFilter("/restrito/*")
 public class FiltroAplicacao implements Filter {
 
 	@Override
@@ -25,14 +25,12 @@ public class FiltroAplicacao implements Filter {
 		HttpSession session = request.getSession(false);
 		String loginURI = request.getContextPath() + "/autenticacao";
 
-		boolean loggedIn = session != null && session.getAttribute("nomeUsuario") != null;
+		boolean loggedIn = session != null && session.getAttribute("apelido") != null;
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
 
 		if (loggedIn || loginRequest) {
-			// request.setCharacterEncoding("UTF-8");
 			chain.doFilter(request, response);
 		} else {
-			// response.sendRedirect(loginURI);
 			System.out.println("iiiiiiiiii parece vc n ta logado");
 		}
 	}

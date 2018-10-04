@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-
 @WebServlet("/cadastro")
 public class CadastroController extends HttpServlet {
 
@@ -23,8 +20,10 @@ public class CadastroController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		CadastroServico cadastro = new CadastroServico();
-//		request.getSession().setAttribute("nomeUsuario", autenticacao.fazAutenticacao(request));
-//		request.getRequestDispatcher(jspPath).forward(request, response);
+		if (cadastro.fazCadastro(request))
+			response.setStatus(200);
+		else
+			response.setStatus(200);
 	}
 
 }

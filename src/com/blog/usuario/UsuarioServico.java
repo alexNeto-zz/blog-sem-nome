@@ -8,20 +8,20 @@ public class UsuarioServico {
 		this.usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
 	}
 
-	public String encontrar(String nomeUsuario, String senha) {
-		Usuario usuario = usuarioRepositorio.encontrarPeloNome(nomeUsuario);
-		if (usuarioValido(usuario, nomeUsuario, senha))
+	public String encontrar(String apelido, String senha) {
+		Usuario usuario = usuarioRepositorio.encontrarPeloNome(apelido);
+		if (usuarioValido(usuario, apelido, senha))
 			return usuario.getApelido();
 		else
 			return null;
 	}
 
-	private Boolean usuarioValido(Usuario usuario, String nomeUsuario, String senha) {
+	private Boolean usuarioValido(Usuario usuario, String apelido, String senha) {
 		Boolean result = true;
 		if (usuario == null)
 			result = false;
 		else {
-			if (!usuario.getApelido().equals(nomeUsuario))
+			if (!usuario.getApelido().equals(apelido))
 				result = false;
 			if (!usuario.getSenha().equals(senha)) {
 				result = false;

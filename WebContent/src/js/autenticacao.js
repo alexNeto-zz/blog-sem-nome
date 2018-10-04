@@ -23,36 +23,39 @@ function fazCadastro() {
     if (validaCampos())
         post("cadastro", pegaDadosCadastro(), sucesso);
     else
-        console.log("TODO - implementar erro ao cadastrar");
+        $("input").addClass("erro");
+
+    function sucesso(dado) {
+        location.reload();
+    }
 }
 
 function validaCampos() {
     const dados = pegaDadosCadastro();
     dados.confirmaSenha = confirmaSenha();
-    let result = true;
-    if (validaApelido(dados.apelido))
-        result = false;
-    if (validaEmail(dados.email))
-        result = false;
-    if (validaSenha(dados.senha, dados.confirmaSenha))
-        result = false;
-
-    return result;
+    let resultado = true;
+    if (!validaApelido(dados.apelido))
+        resultado = false;
+    if (!validaEmail(dados.email))
+        resultado = false;
+    if (!validaSenha(dados.senha, dados.confirmaSenha))
+        resultado = false;
+    return resultado;
 }
 
 function validaApelido(apelido) {
-    let result = true;
+    let resultado = true;
     let usuarioExiste;
-    get("usuario", apelido(), (dado) => usuarioExiste = dado.usuarioExiste);
+    get("usuario", pegaApelido(), (dado) => usuarioExiste = dado.usuarioExiste);
     if (apelido === undefined)
-        result = false;
+        resultado = false;
     if (apelido.length < 3)
-        result = false;
+        resultado = false;
     if (usuarioExiste)
-        result = false;
-    return result;
+        resultado = false;
+    return resultado;
 
-    function apelido() {
+    function pegaApelido() {
         return {
             apelido: apelido
         };
@@ -60,21 +63,21 @@ function validaApelido(apelido) {
 }
 
 function validaEmail(email) {
-    let result = true;
+    let resultado = true;
     if (email === undefined)
-        result = false;
-    if (!encontra(separa(email), "@"))
-        result = false;
-    return result;
+        resultado = false;
+    if (!encontra(email, "@"))
+        resultado = false;
+    return resultado;
 }
 
 function validaSenha(senha, confirmaSenha) {
-    let result = true;
+    let resultado = true;
     if (senha.length < 8)
-        result = false;
+        resultado = false;
     if (senha != confirmaSenha)
-        result = false;
-    return result;
+        resultado = false;
+    return resultado;
 }
 
 function pegaDadosCadastro() {
@@ -90,9 +93,9 @@ function confirmaSenha() {
 }
 
 function fazAutenticacao() {
-    post("autenticacao", pegaDadosCadastro(), sucesso);
+    post("autenticacao", pegaDadosAutenticacao(), sucesso, falha);
 
-    function pegaDadosCadastro() {
+    function pegaDadosAutenticacao() {
         return {
             apelido: document.getElementById("apelido").value,
             senha: document.getElementById("senha").value

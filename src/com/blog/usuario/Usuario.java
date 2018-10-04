@@ -20,10 +20,6 @@ public class Usuario {
 	@Column
 	private String email;
 	@Column
-	private String primeiroNome;
-	@Column
-	private String ultimoNome;
-	@Column
 	private String senha;
 	@Column
 	private TipoUsuario tipoUsuario;
@@ -52,22 +48,6 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getPrimeiroNome() {
-		return primeiroNome;
-	}
-
-	public void setPrimeiroNome(String primeiroNome) {
-		this.primeiroNome = primeiroNome;
-	}
-
-	public String getUltimoNome() {
-		return ultimoNome;
-	}
-
-	public void setUltimoNome(String ultimoNome) {
-		this.ultimoNome = ultimoNome;
-	}
-
 	public String getSenha() {
 		return senha;
 	}
@@ -83,5 +63,4 @@ public class Usuario {
 	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
-
-	}
+}
