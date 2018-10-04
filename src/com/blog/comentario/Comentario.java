@@ -1,7 +1,5 @@
 package com.blog.comentario;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +17,7 @@ public class Comentario {
 	@Column(columnDefinition = "text")
 	private String conteudo;
 	@Column
-	private Date dataCriacao;
+	private String dataCriacao;
 	@Column
 	private Long identificadorTopico;
 
@@ -55,11 +53,11 @@ public class Comentario {
 		this.conteudo = conteudo;
 	}
 
-	public Date getDataCriacao() {
+	public String getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(String dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 

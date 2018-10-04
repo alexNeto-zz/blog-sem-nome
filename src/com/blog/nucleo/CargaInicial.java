@@ -77,7 +77,7 @@ public class CargaInicial implements Filter {
 				Comentario comentario = new Comentario();
 				comentario.setIdentificadorTopico(topico.getIdentificador());
 				comentario.setApelido("nome");
-				comentario.setDataCriacao(new Date());
+				comentario.setDataCriacao(new Date().toString());
 				comentario.setConteudo(lorem.getWords(2, 100));
 				comentarioRepositorio.inserir(comentario);
 				Thread.sleep(500);

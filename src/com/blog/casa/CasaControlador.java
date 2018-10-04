@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.topico.Topico;
 import com.blog.topico.TopicoServico;
+import com.google.common.collect.Lists;
 
 @WebServlet("/inicio")
 public class CasaControlador extends HttpServlet {
@@ -25,7 +26,7 @@ public class CasaControlador extends HttpServlet {
 			throws ServletException, IOException {
 
 		TopicoServico topicoServico = new TopicoServico();
-		List<Topico> topicos = topicoServico.pegaTodos();
+		List<Topico> topicos = Lists.reverse(topicoServico.pegaTodos());
 
 		request.setAttribute("topicos", topicos);
 

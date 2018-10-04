@@ -258,14 +258,33 @@ section>p {
   font-size: 1em;
 }
 
-.botao-flutuante{
-	position:fixed;
-	bottom:40px;
-	right:40px;
-  text-align:center;
+.comentar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.botao-flutuante {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  text-align: center;
   text-decoration: none;
 }
 
-.erro{
+.erro {
   color: #ff5964;
+}
+
+textarea {
+  height: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#formulario-comentar{
+  margin: 5px;
 }
