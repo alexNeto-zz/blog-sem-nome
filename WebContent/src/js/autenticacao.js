@@ -35,10 +35,23 @@ function fazAutenticacao() {
         apelido: document.getElementById("apelido").value,
         senha: document.getElementById("senha").value
     }
-    post("autenticacao", dados, (dado) => console.log(dado));   
+    post("autenticacao", dados, sucesso);   
+
+    function sucesso(dado){
+        location.reload();
+    }
+
+    function falha(xhr, status, error){
+        $("#apelido").addClass("erro");
+        $("#senha").addClass("erro");
+    }
 
 }
 
 function sair() {
+    post("sair", undefined, sucesso);
 
+    function sucesso(dado){
+        location.reload();
+    }
 }

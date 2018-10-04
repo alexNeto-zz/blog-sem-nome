@@ -21,16 +21,17 @@ public class CasaController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 2421920873100002415L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		TopicoServico topicoServico = new TopicoServico();
 		List<Topico> topicos = topicoServico.pegaTodos();
-	
+
 		request.setAttribute("topicos", topicos);
-		
-		Boolean estaLogado = request.getSession() != null && request.getSession().getAttribute("apelido") != null;
-		request.setAttribute("estaLogado", estaLogado);
-		
+
+		String apelido = request.getSession() != null ? (String) request.getSession().getAttribute("apelido") : null;
+		request.setAttribute("estaLogado", apelido);
+
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
 		rd.forward(request, response);
 	}

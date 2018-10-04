@@ -9,15 +9,15 @@
     
     <div class="drop-container">
         <c:choose>
-            <c:when test="${estaLogado eq true}">
+            <c:when test="${estaLogado != null}">
                 <button id="autenticacao" class="botao borda botao-header margem-inferior">
-                    <p>TODO</p>
+                    <p>${apelido}</p>
                 </button>
                 <div class="drop-conteudo borda">
                     <div>
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
+                        <a onclick="sair()">Sair</a>
                     </div>
                 </div>
             </c:when>

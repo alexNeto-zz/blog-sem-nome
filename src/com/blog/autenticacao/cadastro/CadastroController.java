@@ -1,4 +1,4 @@
-package com.blog.cadastro;
+package com.blog.autenticacao.cadastro;
 
 import java.io.IOException;
 

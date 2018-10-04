@@ -1,4 +1,4 @@
-package com.blog.autenticacao;
+package com.blog.autenticacao.sair;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/autenticacao")
-public class AutenticacaoController extends HttpServlet {
+@WebServlet("/sair")
+public class SairControlador extends HttpServlet {
 
 	/**
 	* 
@@ -24,12 +24,7 @@ public class AutenticacaoController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		AutenticacaoService autenticacao = new AutenticacaoService();
-		String apelido = autenticacao.fazAutenticacao(request);
-		if (apelido != null)
-			request.getSession().setAttribute("apelido", apelido);
-		else
-			response.setStatus(403);
+		request.getSession().setAttribute("apelido", null);
 	}
 
 }
