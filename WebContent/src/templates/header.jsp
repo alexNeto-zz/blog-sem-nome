@@ -4,19 +4,22 @@
 
 <header>
     <h1 id="logo">Blog Sem Nome</h1>
-    
+
     <div class="espaco"></div>
-    
+
     <div class="drop-container">
         <c:choose>
             <c:when test="${estaLogado != null}">
                 <button id="autenticacao" class="botao borda botao-header margem-inferior">
-                    <p>${apelido}</p>
+                    <p id="apelido">${apelido}</p>
                 </button>
                 <div class="drop-conteudo borda">
                     <div>
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
+                        <a href="#">Minha Conta</a>
+                        <a href="#">Meus Comentários</a>
+                        <c:if test="${tipoUsuario == 'ADM'}">
+                            <a id="administrador" href="#">Gerenciar Blog</a>
+                        </c:if>
                         <a onclick="sair()">Sair</a>
                     </div>
                 </div>

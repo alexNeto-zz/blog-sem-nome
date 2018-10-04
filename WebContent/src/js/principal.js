@@ -24,14 +24,26 @@ function mostrarComentarios(comentarios) {
     }
 
     function pegaComentario(comentario) {
-        return `<section class="borda margem-conteudo-principal comentario">
-	        <h1>${comentario.apelido}</h1>
-	        <h2>${comentario.dataCriacao}</h2>
-	        <p>${comentario.conteudo}</p>
-	    </section>`;
+        return `<article class="borda">
+			        <div class="conteudo">
+                        <h2 id="apelido-comentario">${comentario.apelido}</h2>
+                        <h3>${comentario.dataCriacao}</h3>
+                        <p>${comentario.conteudo}</p>
+					</div>
+					${botaoComentario(comentario.identificador, comentario.apelido)}
+				</article>`;
+    }
+
+    function botaoComentario(identificador, apelidoComentario) {
+        let botaoApagarComentario = "";
+        const apelido = document.getElementById("apelido").innerHTML;
+        if (apelido === apelidoComentario || document.getElementById("administrador") !== undefined)
+            return `<div class="botao-ler">
+                        <button type="submit" class="botao borda botao-header" onclick="apagarComentario(${identificador})">Apagar</button>
+                    </div>`;
+        return botaoApagarComentario;
     }
 }
-
 
 function voltarParaListagem() {
     mudarParaConteudo(false);
@@ -69,7 +81,7 @@ function comentar() {
     }
 }
 
-function pegaComentario(){
+function pegaComentario() {
     console.log({
         conteudo: document.getElementById("texto-comentario").value,
         identificadorTopico: identificadorTopico

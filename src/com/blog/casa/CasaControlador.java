@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.topico.Topico;
 import com.blog.topico.TopicoServico;
+import com.blog.usuario.UsuarioDaoJpa;
 import com.google.common.collect.Lists;
 
 @WebServlet("/inicio")
@@ -32,6 +33,11 @@ public class CasaControlador extends HttpServlet {
 
 		String apelido = request.getSession() != null ? (String) request.getSession().getAttribute("apelido") : null;
 		request.setAttribute("estaLogado", apelido);
+		if(apelido != null) {
+			request.setAttribute("tipoUsuario", UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
+			System.out.println( UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
+		}
+		
 
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
 		rd.forward(request, response);

@@ -39,7 +39,8 @@
 
 		<jsp:include page="./src/templates/comentario.jsp" />
 
-		<div id="comentarios"></div>
+		<section id="comentarios" class="margem-conteudo-principal borda topicos"></section>
+
 		<a onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
 	</div>
 
