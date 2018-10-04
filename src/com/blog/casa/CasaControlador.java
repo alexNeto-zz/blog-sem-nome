@@ -14,7 +14,7 @@ import com.blog.topico.Topico;
 import com.blog.topico.TopicoServico;
 
 @WebServlet("/inicio")
-public class CasaController extends HttpServlet {
+public class CasaControlador extends HttpServlet {
 
 	/**
 	 * 

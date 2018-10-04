@@ -1,4 +1,4 @@
-package com.blog.topico;
+package com.blog.usuario;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,26 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/topico")
-public class TopicoController extends HttpServlet {
+@WebServlet("/usuario")
+public class UsuarioControlador extends HttpServlet {
 
 	/**
-	* 
-	*/
-	private static final long serialVersionUID = -112315248180092748L;
+	 * 
+	 */
+	private static final long serialVersionUID = 5476389992978057424L;
 
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		UsuarioDao usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
+		boolean usuarioExiste = usuarioRepositorio.encontrarPeloNome(request.getParameter("apelido")) != null;
 		response.setContentType("application/json");
 		PrintWriter resposta = response.getWriter();
-		resposta.print(new TopicoServico().pegaPeloIdentificador(request.getParameter("topico")));
+		resposta.print(usuarioExiste);
 		resposta.flush();
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 	}
 
 }

@@ -45,3 +45,11 @@ function mudarParaConteudo(estaVisivel) {
 function paraTopo() {
     window.scrollTo(0, 0);
 }
+
+function separa(paraSeparar) {
+    return _.words(paraSeparar);
+}
+
+function encontra(texto, chave) {
+    return !_.isEmpty(_.filter(texto, palavra => palavra === chave));
+}

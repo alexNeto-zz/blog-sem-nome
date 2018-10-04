@@ -55,7 +55,7 @@
                             <input type="password" name="senha" id="nova-senha" placeholder="Senha">
                         </div>
                         <div>
-                            <input type="password" name="comfirmaSenha" id="comfirma-senha" placeholder="Comfirmação da Senha">
+                            <input type="password" name="confirmaSenha" id="confirma-senha" placeholder="Confirmação da Senha">
                         </div>
                         <div class="botoes-autenticacao">
                             <button class="botao borda botao-header" onclick="preencherAutenticacao()" tabindex="-1">Entrar</button>
