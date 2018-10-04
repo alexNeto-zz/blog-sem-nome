@@ -23,8 +23,15 @@ public class ComentarioControlador extends HttpServlet {
 		if (comentario.salvaComentario(request))
 			response.setStatus(200);
 		else
-			response.setStatus(200);
-		
+			response.setStatus(200);	
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ComentarioServico comentario = new ComentarioServico();
+		comentario.apagaComentario(request.getParameter("identificador"));
+		response.setStatus(200);
 	}
 
 }

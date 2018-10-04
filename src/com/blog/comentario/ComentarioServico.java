@@ -17,4 +17,9 @@ public class ComentarioServico {
 		return true;
 	}
 
+	protected void apagaComentario(String identificador) {
+		ComentarioDao comentarioRepositorio = ComentarioDaoJpa.pegaInstancia();
+		comentarioRepositorio.apagaPeloIdentificador(Long.valueOf(identificador));
+	}
+
 }

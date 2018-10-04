@@ -12,8 +12,12 @@ function mostrarConteudoTopico(dado) {
     $("#conteudo").html(dado.conteudo);
     identificadorTopico = dado.identificador;
     mostrarComentarios(dado.comentarios)
-    paraTopo();
+    mostrarTopico();
+}
+
+function mostrarTopico() {
     mudarParaConteudo(true);
+    paraTopo();
 }
 
 function mostrarComentarios(comentarios) {
@@ -42,6 +46,17 @@ function mostrarComentarios(comentarios) {
                         <button type="submit" class="botao borda botao-header" onclick="apagarComentario(${identificador})">Apagar</button>
                     </div>`;
         return botaoApagarComentario;
+    }
+}
+
+function apagarComentario(identificador) {
+    get("comentario", {
+        identificador: identificador
+    }, sucesso);
+
+    function sucesso(dado) {
+        location.reload();
+        mostrarTopico();
     }
 }
 
@@ -76,8 +91,7 @@ function comentar() {
     function sucesso(dado) {
         document.getElementById("texto-comentario").value = "";
         location.reload();
-        mudarParaConteudo(true);
-        paraTopo();
+        mostrarTopico();
     }
 }
 

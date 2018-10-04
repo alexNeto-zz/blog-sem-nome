@@ -35,10 +35,8 @@ public class CasaControlador extends HttpServlet {
 		request.setAttribute("estaLogado", apelido);
 		if(apelido != null) {
 			request.setAttribute("tipoUsuario", UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
-			System.out.println( UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
 		}
 		
-
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
 		rd.forward(request, response);
 	}
