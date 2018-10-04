@@ -62,7 +62,7 @@ function comentar() {
     post("comentario", pegaComentario(), sucesso);
 
     function sucesso(dado) {
-        document.getElementById("texto-comentario").value = undefined;
+        document.getElementById("texto-comentario").value = "";
         location.reload();
         mudarParaConteudo(true);
         paraTopo();
