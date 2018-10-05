@@ -23,22 +23,22 @@ public class CasaControlador extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 2421920873100002415L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 
 		TopicoServico topicoServico = new TopicoServico();
 		List<Topico> topicos = Lists.reverse(topicoServico.pegaTodos());
 
-		request.setAttribute("topicos", topicos);
+		requisicao.setAttribute("topicos", topicos);
 
-		String apelido = request.getSession() != null ? (String) request.getSession().getAttribute("apelido") : null;
-		request.setAttribute("estaLogado", apelido);
+		String apelido = requisicao.getSession() != null ? (String) requisicao.getSession().getAttribute("apelido") : null;
+		requisicao.setAttribute("estaLogado", apelido);
 		if(apelido != null) {
-			request.setAttribute("tipoUsuario", UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
+			requisicao.setAttribute("tipoUsuario", UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
 		}
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
-		rd.forward(request, response);
+		rd.forward(requisicao, resposta);
 	}
 
 }

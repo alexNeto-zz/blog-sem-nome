@@ -30,12 +30,18 @@ function mostrarComentarios(comentarios) {
     function pegaComentario(comentario) {
         return `<article class="borda">
 			        <div class="conteudo">
-                        <h2 id="apelido-comentario">${comentario.apelido}</h2>
+                        <h2 id="apelido-comentario">${eAdministrador(comentario.apelido)}${comentario.apelido}</h2>
                         <h3>${comentario.dataCriacao}</h3>
                         <p>${comentario.conteudo}</p>
 					</div>
 					${botaoComentario(comentario.identificador, comentario.apelido)}
 				</article>`;
+    }
+
+    function eAdministrador(apelidoComentario) {
+        if (document.getElementById("administrador") !== undefined && document.getElementById("apelido").innerHTML === apelidoComentario)
+            return "♕ ";
+        else return "";
     }
 
     function botaoComentario(identificador, apelidoComentario) {

@@ -17,21 +17,17 @@ import javax.servlet.http.HttpSession;
 public class FiltroAplicacao implements Filter {
 
 	@Override
-	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain corrente)
 			throws ServletException, IOException {
 
-		HttpServletRequest request = (HttpServletRequest) req;
-		HttpServletResponse response = (HttpServletResponse) res;
-		HttpSession session = request.getSession(false);
-		String loginURI = request.getContextPath() + "/autenticacao";
+		HttpServletRequest requisicao = (HttpServletRequest) req;
+		HttpServletResponse resposta = (HttpServletResponse) res;
+		HttpSession session = requisicao.getSession(false);
 
 		boolean loggedIn = session != null && session.getAttribute("apelido") != null;
-		boolean loginRequest = request.getRequestURI().equals(loginURI);
 
-		if (loggedIn || loginRequest) {
-			chain.doFilter(request, response);
-		} else {
-			System.out.println("iiiiiiiiii parece vc n ta logado");
+		if (loggedIn) {
+			corrente.doFilter(requisicao, resposta);
 		}
 	}
 

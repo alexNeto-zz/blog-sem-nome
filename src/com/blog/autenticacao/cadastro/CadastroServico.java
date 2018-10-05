@@ -10,10 +10,10 @@ import com.blog.usuario.UsuarioServico;
 
 public class CadastroServico {
 
-	protected Boolean fazCadastro(HttpServletRequest request) {
-		String apelido = request.getParameter("apelido");
-		String senha = request.getParameter("senha");
-		String email = request.getParameter("email");
+	protected Boolean fazCadastro(HttpServletRequest requisicao) {
+		String apelido = requisicao.getParameter("apelido");
+		String senha = requisicao.getParameter("senha");
+		String email = requisicao.getParameter("email");
 		UsuarioServico usuarioServico = new UsuarioServico();
 		UsuarioDao usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
 		Boolean resultado = false;
@@ -24,7 +24,7 @@ public class CadastroServico {
 			usuario.setSenha(senha);
 			usuario.setTipoUsuario(TipoUsuario.NORMAL);
 			usuarioRepositorio.inserir(usuario);
-			request.getSession().setAttribute("apelido", apelido);
+			requisicao.getSession().setAttribute("apelido", apelido);
 			resultado = true;
 		}
 		return resultado;

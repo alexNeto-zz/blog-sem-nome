@@ -15,8 +15,6 @@
                 </button>
                 <div class="drop-conteudo borda">
                     <div>
-                        <a href="#">Minha Conta</a>
-                        <a href="#">Meus Comentários</a>
                         <c:if test="${tipoUsuario == 'ADM'}">
                             <a id="administrador" href="#">Gerenciar Blog</a>
                         </c:if>

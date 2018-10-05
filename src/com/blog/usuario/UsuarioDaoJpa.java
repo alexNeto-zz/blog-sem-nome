@@ -21,7 +21,7 @@ public class UsuarioDaoJpa implements UsuarioDao {
 	}
 
 	private UsuarioDaoJpa() {
-		entityManager = ConexaoFabrica.getEntityManager();
+		entityManager = ConexaoFabrica.pegaGerenciadorEntidade();
 	}
 
 	@Override

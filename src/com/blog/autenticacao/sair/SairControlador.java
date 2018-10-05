@@ -17,14 +17,14 @@ public class SairControlador extends HttpServlet {
 	private static final long serialVersionUID = -4293549827107647532L;
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
-		request.getSession().setAttribute("apelido", null);
+		requisicao.getSession().setAttribute("apelido", null);
 	}
 
 }

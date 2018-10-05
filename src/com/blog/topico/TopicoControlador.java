@@ -18,17 +18,11 @@ public class TopicoControlador extends HttpServlet {
 	private static final long serialVersionUID = -112315248180092748L;
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
-		response.setContentType("application/json");
-		PrintWriter resposta = response.getWriter();
-		resposta.print(new TopicoServico().pegaPeloIdentificador(request.getParameter("topico")));
-		resposta.flush();
+		resposta.setContentType("application/json");
+		PrintWriter respostaEscritor = resposta.getWriter();
+		respostaEscritor.print(new TopicoServico().pegaPeloIdentificador(requisicao.getParameter("topico")));
+		respostaEscritor.flush();
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	}
-
 }

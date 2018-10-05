@@ -17,15 +17,15 @@ public class UsuarioControlador extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 5476389992978057424L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 
 		UsuarioDao usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
-		boolean usuarioExiste = usuarioRepositorio.encontrarPeloNome(request.getParameter("apelido")) != null;
-		response.setContentType("application/json");
-		PrintWriter resposta = response.getWriter();
-		resposta.print(usuarioExiste);
-		resposta.flush();
+		boolean usuarioExiste = usuarioRepositorio.encontrarPeloNome(requisicao.getParameter("apelido")) != null;
+		resposta.setContentType("application/json");
+		PrintWriter respostaEscritor = resposta.getWriter();
+		respostaEscritor.print(usuarioExiste);
+		respostaEscritor.flush();
 	}
 
 }

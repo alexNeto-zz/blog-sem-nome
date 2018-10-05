@@ -17,21 +17,21 @@ public class ComentarioControlador extends HttpServlet {
 	private static final long serialVersionUID = -112315248180092748L;
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 		ComentarioServico comentario = new ComentarioServico();
-		if (comentario.salvaComentario(request))
-			response.setStatus(200);
+		if (comentario.salvaComentario(requisicao))
+			resposta.setStatus(200);
 		else
-			response.setStatus(200);	
+			resposta.setStatus(200);
 	}
-	
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 		ComentarioServico comentario = new ComentarioServico();
-		comentario.apagaComentario(request.getParameter("identificador"));
-		response.setStatus(200);
+		comentario.apagaComentario(requisicao.getParameter("identificador"));
+		resposta.setStatus(200);
 	}
 
 }

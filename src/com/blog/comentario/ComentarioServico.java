@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 
 public class ComentarioServico {
 
-	protected Boolean salvaComentario(HttpServletRequest request) {
+	protected Boolean salvaComentario(HttpServletRequest requisicao) {
 		ComentarioDao comentarioRepositorio = ComentarioDaoJpa.pegaInstancia();
 		Comentario comentario = new Comentario();
-		comentario.setApelido((String) request.getSession().getAttribute("apelido"));
+		comentario.setApelido((String) requisicao.getSession().getAttribute("apelido"));
 		comentario.setDataCriacao(new Date().toString());
-		comentario.setIdentificadorTopico(Long.valueOf(request.getParameter("identificadorTopico")));
-		comentario.setConteudo(request.getParameter("conteudo"));
+		comentario.setIdentificadorTopico(Long.valueOf(requisicao.getParameter("identificadorTopico")));
+		comentario.setConteudo(requisicao.getParameter("conteudo"));
 		comentarioRepositorio.inserir(comentario);
 		return true;
 	}

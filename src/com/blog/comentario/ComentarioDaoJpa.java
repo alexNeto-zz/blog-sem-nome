@@ -10,30 +10,30 @@ import com.blog.nucleo.ConexaoFabrica;
 
 public class ComentarioDaoJpa implements ComentarioDao{
 	
-	private static ComentarioDaoJpa instance;
-	private EntityManager entityManager;
+	private static ComentarioDaoJpa instancia;
+	private EntityManager gerenciadorEntidade;
 
 	public static ComentarioDaoJpa pegaInstancia() {
-		if (instance == null) {
-			instance = new ComentarioDaoJpa();
+		if (instancia == null) {
+			instancia = new ComentarioDaoJpa();
 		}
-		return instance;
+		return instancia;
 	}
 
 	private ComentarioDaoJpa() {
-		entityManager = ConexaoFabrica.getEntityManager();
+		gerenciadorEntidade = ConexaoFabrica.pegaGerenciadorEntidade();
 	}
 
 	@Override
 	public Comentario inserir(Comentario Comentario) {
 		Comentario novoComentario = Comentario;
 		try {
-			entityManager.getTransaction().begin();
-			entityManager.persist(novoComentario);
-			entityManager.getTransaction().commit();
+			gerenciadorEntidade.getTransaction().begin();
+			gerenciadorEntidade.persist(novoComentario);
+			gerenciadorEntidade.getTransaction().commit();
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			entityManager.getTransaction().rollback();
+			gerenciadorEntidade.getTransaction().rollback();
 			novoComentario = null;
 		}
 		return novoComentario;
@@ -41,11 +41,11 @@ public class ComentarioDaoJpa implements ComentarioDao{
 
 	@Override
 	public Comentario encontrarPeloIdentificador(Long id) {
-		return entityManager.find(Comentario.class, id);
+		return gerenciadorEntidade.find(Comentario.class, id);
 	}
 
 	public List<Comentario> encontrarPeloIdentificadorTopico(Long identificador) {
-		TypedQuery<Comentario> query = entityManager.createQuery(
+		TypedQuery<Comentario> query = gerenciadorEntidade.createQuery(
 				"FROM Comentario u WHERE u.identificadorTopico=:identificadorTopico", Comentario.class);
 		query.setParameter("identificadorTopico", identificador);
 		try {
@@ -57,7 +57,7 @@ public class ComentarioDaoJpa implements ComentarioDao{
 
 	@Override
 	public List<Comentario> encontrarTodos() {
-		return entityManager.createQuery("FROM " + Comentario.class.getName()).getResultList();
+		return gerenciadorEntidade.createQuery("FROM " + Comentario.class.getName()).getResultList();
 	}
 
 	@Override
@@ -70,13 +70,13 @@ public class ComentarioDaoJpa implements ComentarioDao{
 	public boolean apaga(Comentario Comentario) {
 		Boolean result = true;
 		try {
-			entityManager.getTransaction().begin();
-			Comentario ComentarioParaDeletar = entityManager.find(Comentario.class, Comentario.getIdentificador());
-			entityManager.remove(ComentarioParaDeletar);
-			entityManager.getTransaction().commit();
+			gerenciadorEntidade.getTransaction().begin();
+			Comentario ComentarioParaDeletar = gerenciadorEntidade.find(Comentario.class, Comentario.getIdentificador());
+			gerenciadorEntidade.remove(ComentarioParaDeletar);
+			gerenciadorEntidade.getTransaction().commit();
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			entityManager.getTransaction().rollback();
+			gerenciadorEntidade.getTransaction().rollback();
 			result = false;
 		}
 		return result;

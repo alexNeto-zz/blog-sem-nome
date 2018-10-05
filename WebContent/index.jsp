@@ -12,37 +12,8 @@
 
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
-
-	<div id="listagem-topico">
-		<section class="margem-conteudo-principal borda topicos">
-			<c:forEach items="${topicos}" var="topico">
-				<article class="borda">
-					<div class="conteudo">
-						<h2>${topico.getTitulo()}</h2>
-						<h3>${topico.getDataCriacao()}</h3>
-						<p>${topico.getConteudoTamanho200()}</p>
-					</div>
-					<div class="botao-ler">
-						<button type="submit" class="botao borda botao-header" onclick="lerTopico(${topico.getIdentificador()})">Ler</button>
-					</div>
-				</article>
-			</c:forEach>
-		</section>
-	</div>
-
-	<div id="conteudo-topico" hidden>
-		<section class="borda margem-conteudo-principal">
-			<h1 id="titulo"></h1>
-			<h2 id="data"></h2>
-			<p id="conteudo"></p>
-		</section>
-
-		<jsp:include page="./src/templates/comentario.jsp" />
-
-		<section id="comentarios" class="margem-conteudo-principal borda topicos"></section>
-
-		<a onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
-	</div>
+	<jsp:include page="./src/templates/listagem-topicos.jsp"/>
+	<jsp:include page="./src/templates/topico.jsp"/>
 
 </body>
 

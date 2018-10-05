@@ -6,14 +6,14 @@ import javax.persistence.Persistence;
 
 public class ConexaoFabrica {
 
-	private static EntityManager entityManager;
+	private static EntityManager gerenciadorEntidade;
 
-	public static EntityManager getEntityManager() {
+	public static EntityManager pegaGerenciadorEntidade() {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("blog-pu");
-		if (entityManager == null) {
-			entityManager = factory.createEntityManager();
+		if (gerenciadorEntidade == null) {
+			gerenciadorEntidade = factory.createEntityManager();
 		}
 
-		return entityManager;
+		return gerenciadorEntidade;
 	}
 }

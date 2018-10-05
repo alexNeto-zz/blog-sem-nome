@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/autenticacao")
-public class AutenticacaoController extends HttpServlet {
+public class AutenticacaoControlador extends HttpServlet {
 
 	/**
 	* 
@@ -17,14 +17,14 @@ public class AutenticacaoController extends HttpServlet {
 	private static final long serialVersionUID = -4293549827107647532L;
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
-		AutenticacaoService autenticacao = new AutenticacaoService();
-		String apelido = autenticacao.fazAutenticacao(request);
+		AutenticacaoServico autenticacao = new AutenticacaoServico();
+		String apelido = autenticacao.fazAutenticacao(requisicao);
 		if (apelido != null)
-			request.getSession().setAttribute("apelido", apelido);
+			requisicao.getSession().setAttribute("apelido", apelido);
 		else
-			response.setStatus(403);
+			resposta.setStatus(403);
 	}
 
 }

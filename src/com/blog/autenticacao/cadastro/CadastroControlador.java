@@ -17,13 +17,13 @@ public class CadastroControlador extends HttpServlet {
 	private static final long serialVersionUID = -5831928775369675189L;
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 		CadastroServico cadastro = new CadastroServico();
-		if (cadastro.fazCadastro(request))
-			response.setStatus(200);
+		if (cadastro.fazCadastro(requisicao))
+			resposta.setStatus(200);
 		else
-			response.setStatus(200);
+			resposta.setStatus(200);
 	}
 
 }
