@@ -12,5 +12,8 @@
     <jsp:include page="./comentario.jsp" />
     <section id="comentarios" class="margem-conteudo-principal borda topicos"></section>
 
-    <a onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
+    <c:if test="${tipoUsuario == 'ADM'}">
+        <a onclick="apagarTopico()" class="botao-flutuante-apagar borda botao botao-header"><i>Apagar<i></a>
+    </c:if>
+    <a id="botao-voltar" onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
 </div>

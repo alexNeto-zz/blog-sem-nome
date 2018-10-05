@@ -33,9 +33,7 @@ function mostrarComentarios(comentarios) {
     function pegaComentario(comentario) {
         return `<article class="borda">
 			        <div class="conteudo">
-                        <h2 id="apelido-comentario">${eAdministrador(
-                          comentario.apelido
-                        )}${comentario.apelido}</h2>
+                        <h2 id="apelido-comentario">${comentario.apelido}</h2>
                         <h3>${comentario.dataCriacao}</h3>
                         <p>${comentario.conteudo}</p>
 					</div>
@@ -43,24 +41,15 @@ function mostrarComentarios(comentarios) {
 				</article>`;
     }
 
-    function eAdministrador(apelidoComentario) {
-        if (
-            document.getElementById("administrador") !== undefined &&
-            document.getElementById("apelido").innerHTML === apelidoComentario
-        )
-            return "♕ ";
-        else return "";
-    }
-
     function botaoComentario(identificador, apelidoComentario) {
         let botaoApagarComentario = "";
         const apelido = document.getElementById("apelido").innerHTML;
         if (
             apelido === apelidoComentario ||
-            document.getElementById("administrador") !== undefined
+            document.getElementById("administrador") != undefined
         )
             return `<div class="botao-ler">
-                        <button type="submit" class="botao borda botao-header" onclick="apagarComentario(${identificador})">Apagar</button>
+                        <button class="botao borda botao-header" onclick="apagarComentario(${identificador})">Apagar</button>
                     </div>`;
         return botaoApagarComentario;
     }
@@ -118,4 +107,23 @@ function pegaComentario() {
         conteudo: censura(document.getElementById("texto-comentario").value),
         identificadorTopico: identificadorTopico
     };
+}
+
+function apagarTopico() {
+    const dado = {
+        identificador: identificadorTopico
+    };
+    if (podeApagar()) {
+        post("restrito/gerenciar/topico", dado, sucesso);
+    }
+
+    function sucesso(dado) {
+        location.reload();
+        mudarParaConteudo(false);
+        paraTopo();
+    }
+}
+
+function podeApagar() {
+    return $("#comentarios").html() === "";
 }

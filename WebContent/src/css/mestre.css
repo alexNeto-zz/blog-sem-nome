@@ -274,6 +274,14 @@ section>p {
   text-decoration: none;
 }
 
+.botao-flutuante-apagar {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .erro {
   color: #ff5964;
 }
