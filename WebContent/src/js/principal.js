@@ -7,9 +7,9 @@ function lerTopico(topico) {
 }
 
 function mostrarConteudoTopico(dado) {
-    $("#titulo").html(dado.titulo);
+    $("#titulo").html(censura(dado.titulo));
     $("#data").html(dado.dataCriacao);
-    $("#conteudo").html(dado.conteudo);
+    $("#conteudo").html(censura(dado.conteudo));
     identificadorTopico = dado.identificador;
     mostrarComentarios(dado.comentarios)
     mostrarTopico();
@@ -96,12 +96,8 @@ function comentar() {
 }
 
 function pegaComentario() {
-    console.log({
-        conteudo: document.getElementById("texto-comentario").value,
-        identificadorTopico: identificadorTopico
-    });
     return {
-        conteudo: document.getElementById("texto-comentario").value,
+        conteudo: censura(document.getElementById("texto-comentario").value),
         identificadorTopico: identificadorTopico
     };
 }
