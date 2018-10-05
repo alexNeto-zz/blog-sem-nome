@@ -1,38 +1,37 @@
+"use strict";
+
 let identificadorTopico = undefined;
 
 function lerTopico(topico) {
-  get(
-    "topico",
-    {
-      topico: topico
-    },
-    mostrarConteudoTopico
-  );
+    const dado = {
+        topico: topico
+    };
+    get("topico", dado, mostrarConteudoTopico);
 }
 
 function mostrarConteudoTopico(dado) {
-  $("#titulo").html(censura(dado.titulo));
-  $("#data").html(dado.dataCriacao);
-  $("#conteudo").html(censura(dado.conteudo));
-  identificadorTopico = dado.identificador;
-  mostrarComentarios(dado.comentarios);
-  mostrarTopico();
+    $("#titulo").html(censura(dado.titulo));
+    $("#data").html(dado.dataCriacao);
+    $("#conteudo").html(censura(dado.conteudo));
+    identificadorTopico = dado.identificador;
+    mostrarComentarios(dado.comentarios);
+    mostrarTopico();
 }
 
 function mostrarTopico() {
-  mudarParaConteudo(true);
-  paraTopo();
+    mudarParaConteudo(true);
+    paraTopo();
 }
 
 function mostrarComentarios(comentarios) {
-  _.forEachRight(comentarios, criaComentario);
+    _.forEachRight(comentarios, criaComentario);
 
-  function criaComentario(comentario) {
-    $("#comentarios").append(pegaComentario(comentario));
-  }
+    function criaComentario(comentario) {
+        $("#comentarios").append(pegaComentario(comentario));
+    }
 
-  function pegaComentario(comentario) {
-    return `<article class="borda">
+    function pegaComentario(comentario) {
+        return `<article class="borda">
 			        <div class="conteudo">
                         <h2 id="apelido-comentario">${eAdministrador(
                           comentario.apelido
@@ -42,84 +41,81 @@ function mostrarComentarios(comentarios) {
 					</div>
 					${botaoComentario(comentario.identificador, comentario.apelido)}
 				</article>`;
-  }
+    }
 
-  function eAdministrador(apelidoComentario) {
-    if (
-      document.getElementById("administrador") !== undefined &&
-      document.getElementById("apelido").innerHTML === apelidoComentario
-    )
-      return "♕ ";
-    else return "";
-  }
+    function eAdministrador(apelidoComentario) {
+        if (
+            document.getElementById("administrador") !== undefined &&
+            document.getElementById("apelido").innerHTML === apelidoComentario
+        )
+            return "♕ ";
+        else return "";
+    }
 
-  function botaoComentario(identificador, apelidoComentario) {
-    let botaoApagarComentario = "";
-    const apelido = document.getElementById("apelido").innerHTML;
-    if (
-      apelido === apelidoComentario ||
-      document.getElementById("administrador") !== undefined
-    )
-      return `<div class="botao-ler">
+    function botaoComentario(identificador, apelidoComentario) {
+        let botaoApagarComentario = "";
+        const apelido = document.getElementById("apelido").innerHTML;
+        if (
+            apelido === apelidoComentario ||
+            document.getElementById("administrador") !== undefined
+        )
+            return `<div class="botao-ler">
                         <button type="submit" class="botao borda botao-header" onclick="apagarComentario(${identificador})">Apagar</button>
                     </div>`;
-    return botaoApagarComentario;
-  }
+        return botaoApagarComentario;
+    }
 }
 
 function apagarComentario(identificador) {
-  get(
-    "comentario",
-    {
-      identificador: identificador
-    },
-    sucesso
-  );
+    const dado = {
+        identificador: identificador
+    };
+    get("comentario", dado, sucesso);
 
-  function sucesso(dado) {
-    location.reload();
-    mostrarTopico();
-  }
+    function sucesso(dado) {
+        location.reload();
+        mostrarTopico();
+    }
 }
 
 function voltarParaListagem() {
-  mudarParaConteudo(false);
-  $("#comentarios").empty();
-  paraTopo();
+    mudarParaConteudo(false);
+    $("#comentarios").empty();
+    paraTopo();
 }
 
 function mudarParaConteudo(estaVisivel) {
-  document.getElementById("listagem-topico").hidden = estaVisivel;
-  document.getElementById("conteudo-topico").hidden = !estaVisivel;
+    document.getElementById("listagem-topico").hidden = estaVisivel;
+    document.getElementById("conteudo-topico").hidden = !estaVisivel;
 }
 
 function paraTopo() {
-  window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 }
 
 function encontra(texto, chave) {
-  return texto.indexOf(chave) !== -1 ? true : false;
+    return texto.indexOf(chave) !== -1 ? true : false;
 }
 
 function mostrarAreaDeComentar() {
-  document.getElementById("comentar").hidden = !document.getElementById(
-    "comentar"
-  ).hidden;
+    document.getElementById("comentar").hidden = !document.getElementById(
+        "comentar"
+    ).hidden;
 }
 
 function comentar() {
-  post("comentario", pegaComentario(), sucesso);
+    post("comentario", pegaComentario(), sucesso);
 
-  function sucesso(dado) {
-    document.getElementById("texto-comentario").value = "";
-    location.reload();
-    mostrarTopico();
-  }
+    function sucesso(dado) {
+        document.getElementById("texto-comentario").value = "";
+        location.reload();
+        mostrarTopico();
+    }
 }
 
 function pegaComentario() {
-  return {
-    conteudo: censura(document.getElementById("texto-comentario").value),
-    identificadorTopico: identificadorTopico
-  };
+    return {
+        conteudo: censura(document.getElementById("texto-comentario").value),
+        identificadorTopico: identificadorTopico
+    };
 }

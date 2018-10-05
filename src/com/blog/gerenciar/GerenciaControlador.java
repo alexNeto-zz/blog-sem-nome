@@ -32,4 +32,12 @@ public class GerenciaControlador extends HttpServlet {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/gerencia.jsp");
 		rd.forward(requisicao, resposta);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
+			throws ServletException, IOException {
+		UsuarioServico usuario = new UsuarioServico();
+		usuario.apagaUsuario(Long.valueOf(requisicao.getParameter("identificador")));
+		resposta.setStatus(200);
+	}
 }

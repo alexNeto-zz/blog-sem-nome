@@ -27,5 +27,4 @@ public class UsuarioControlador extends HttpServlet {
 		respostaEscritor.print(usuarioExiste);
 		respostaEscritor.flush();
 	}
-
 }

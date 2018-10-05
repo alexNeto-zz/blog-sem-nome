@@ -44,6 +44,7 @@ public class ComentarioDaoJpa implements ComentarioDao{
 		return gerenciadorEntidade.find(Comentario.class, id);
 	}
 
+	@Override
 	public List<Comentario> encontrarPeloIdentificadorTopico(Long identificador) {
 		TypedQuery<Comentario> query = gerenciadorEntidade.createQuery(
 				"FROM Comentario u WHERE u.identificadorTopico=:identificadorTopico", Comentario.class);
@@ -54,6 +55,19 @@ public class ComentarioDaoJpa implements ComentarioDao{
 			return null;
 		}
 	}
+	
+	@Override
+	public List<Comentario> encontrarPeloApelido(String apelido) {
+		TypedQuery<Comentario> query = gerenciadorEntidade.createQuery(
+				"FROM Comentario u WHERE u.apelido=:apelido", Comentario.class);
+		query.setParameter("apelido", apelido);
+		try {
+			return query.getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
 
 	@Override
 	public List<Comentario> encontrarTodos() {

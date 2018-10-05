@@ -1,3 +1,5 @@
+"use strict";
+
 const palavroes = [
     "alienado", "animaldeteta", "anormal", "argentino", "arregassado", "arrombado",
     "babaca", "baitola", "baleia", "barril", "benfiquista", "biba", "bicha", "bios",
