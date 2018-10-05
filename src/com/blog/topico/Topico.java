@@ -56,7 +56,7 @@ public class Topico {
 	}
 
 	public String getConteudoTamanho200() {
-		return conteudo.substring(0, 200);
+		return conteudo.substring(0, getConteudo().length() > 200 ? 200 : getConteudo().length());
 	}
 
 	public void setConteudo(String conteudo) {

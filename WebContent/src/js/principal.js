@@ -125,3 +125,33 @@ function apagarTopico() {
 function podeEditar() {
     return $("#comentarios").html() === "";
 }
+
+
+function editarTopico() {
+    document.getElementById("titulo-edicao").value = document.getElementById("titulo").innerHTML;
+    document.getElementById("texto-topico").value = document.getElementById("conteudo").innerHTML;
+    mostrarCamposEdicaoTopico(true);
+}
+
+function mostrarCamposEdicaoTopico(mostrar) {
+    document.getElementById("topico-estatico").hidden = mostrar;
+    document.getElementById("topico-editavel").hidden = !mostrar;
+}
+
+function cancelarEdicao() {
+    mostrarCamposEdicaoTopico(false);
+}
+
+function enviarTopico() {
+    const dado = {
+        identificador: identificadorTopico,
+        titulo: document.getElementById("titulo-edicao").value,
+        conteudo: document.getElementById("texto-topico").value
+    }
+    if (podeEditar())
+        post("restrito/gerenciar/topico/edicao", dado, sucesso);
+
+    function sucesso(dado) {
+        location.reload();
+    }
+}

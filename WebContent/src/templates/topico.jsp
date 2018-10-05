@@ -4,22 +4,23 @@
 
 
 <div id="conteudo-topico" hidden>
-    <div id="topico-estatico" hidden>
+    <div id="topico-estatico">
         <section class="borda margem-conteudo-principal">
             <h1 id="titulo"></h1>
             <h2 id="data"></h2>
             <p id="conteudo"></p>
         </section>
     </div>
-    <div id="topico-editavel">
+    <div id="topico-editavel" hidden>
         <section class="margem-conteudo-principal borda topicos">
             <article class="borda">
                 <div class="conteudo">
-                    <input type="text" name="titulo" id="titulo" placeholder="Título">
+                    <input type="text" name="titulo" id="titulo-edicao" placeholder="Título">
                     <textarea name="texto-comentario" id="texto-topico" placeholder="Escreva algo..."></textarea>
                 </div>
                 <div class="botao-ler">
-                    <button id="formulario-comentar" class="botao borda botao-header" onclick="editarTopico()">Enviar</button>
+                    <button id="formulario-comentar" class="botao borda botao-header" onclick="cancelarEdicao()">Cancelar</button>
+                    <button id="formulario-comentar" class="botao borda botao-header" onclick="enviarTopico()">Enviar</button>
                 </div>
             </article>
         </section>
