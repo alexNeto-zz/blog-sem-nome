@@ -282,6 +282,14 @@ section>p {
   text-decoration: none;
 }
 
+.botao-flutuante-editar {
+  position: fixed;
+  bottom: 120px;
+  right: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .erro {
   color: #ff5964;
 }
@@ -300,4 +308,16 @@ textarea {
 
 #apelido-comentario {
   font-size: 1em;
+}
+
+#texto-topico {
+  min-height: 200px;
+  width: inherit;
+  margin: 10px;
+  height: 300px;
+}
+
+#titulo{
+  width: inherit;
+  font-size: 1.2em;
 }

@@ -113,9 +113,7 @@ function apagarTopico() {
     const dado = {
         identificador: identificadorTopico
     };
-    if (podeApagar()) {
-        post("restrito/gerenciar/topico", dado, sucesso);
-    }
+    get("restrito/gerenciar/topico", dado, sucesso);
 
     function sucesso(dado) {
         location.reload();
@@ -124,6 +122,6 @@ function apagarTopico() {
     }
 }
 
-function podeApagar() {
+function podeEditar() {
     return $("#comentarios").html() === "";
 }
