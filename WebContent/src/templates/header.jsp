@@ -17,7 +17,6 @@
                     <div>
                         <c:if test="${tipoUsuario == 'ADM'}">
                             <a id="administrador" href="${pageContext.request.contextPath}/restrito/gerenciar" target="_blank">Gerenciar Blog</a>
-                            <a id="adicionar-topico" href="${pageContext.request.contextPath}/restrito/gerenciar/topico" target="_blank">Escrever Tópico</a>
                         </c:if>
                         <a onclick="sair()">Sair</a>
                     </div>
