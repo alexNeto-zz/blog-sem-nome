@@ -8,12 +8,11 @@
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 
 
-<link rel="stylesheet" href="./src/css/reset.css">
-<link rel="stylesheet" href="./src/css/master.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/src/css/reset.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/src/css/master.css">
 
-<script src="src/js/censura.js"></script>
-<script src="src/js/httpServico.js"></script>
-<script src="src/js/principal.js"></script>
+<script src="${pageContext.request.contextPath}/src/js/censura.js"></script>
+<script src="${pageContext.request.contextPath}/src/js/httpServico.js"></script>
+<script src="${pageContext.request.contextPath}/src/js/principal.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="favicon.ico">

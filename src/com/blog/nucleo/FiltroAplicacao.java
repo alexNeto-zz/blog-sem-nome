@@ -28,6 +28,8 @@ public class FiltroAplicacao implements Filter {
 
 		if (loggedIn) {
 			corrente.doFilter(requisicao, resposta);
+		} else {
+			System.out.println("iiiiiiiiiiiiiiii");
 		}
 	}
 

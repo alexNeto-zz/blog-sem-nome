@@ -7,14 +7,13 @@
 
 <head>
 	<jsp:include page="./src/templates/head.jsp" />
-	<title>Locadora Sem Nome</title>
+	<title>Blog Sem Nome</title>
 </head>
 
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
 	<jsp:include page="./src/templates/listagem-topicos.jsp"/>
 	<jsp:include page="./src/templates/topico.jsp"/>
-
 </body>
 
 </html>

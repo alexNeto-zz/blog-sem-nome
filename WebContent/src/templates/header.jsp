@@ -16,7 +16,7 @@
                 <div class="drop-conteudo borda">
                     <div>
                         <c:if test="${tipoUsuario == 'ADM'}">
-                            <a id="administrador" href="#">Gerenciar Blog</a>
+                            <a id="administrador" href="${pageContext.request.contextPath}/restrito/gerenciar" target="_blank">Gerenciar Blog</a>
                         </c:if>
                         <a onclick="sair()">Sair</a>
                     </div>

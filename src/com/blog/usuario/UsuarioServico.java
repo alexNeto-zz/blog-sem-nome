@@ -1,5 +1,7 @@
 package com.blog.usuario;
 
+import java.util.List;
+
 public class UsuarioServico {
 
 	private UsuarioDao usuarioRepositorio;
@@ -8,7 +10,7 @@ public class UsuarioServico {
 		this.usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
 	}
 
-	public String encontrar(String apelido, String senha) {
+	protected String encontrar(String apelido, String senha) {
 		Usuario usuario = usuarioRepositorio.encontrarPeloNome(apelido);
 		if (usuarioValido(usuario, apelido, senha))
 			return usuario.getApelido();
@@ -28,5 +30,9 @@ public class UsuarioServico {
 			}
 		}
 		return result;
+	}
+
+	public List<Usuario> pegaTodos() {
+		return usuarioRepositorio.encontrarTodos();
 	}
 }
