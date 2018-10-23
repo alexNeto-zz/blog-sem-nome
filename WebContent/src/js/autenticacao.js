@@ -73,8 +73,6 @@ function validaEmail(email) {
 
 function validaSenha(senha, confirmaSenha) {
     let resultado = true;
-    if (senha.length < 8)
-        resultado = false;
     if (senha != confirmaSenha)
         resultado = false;
     return resultado;

@@ -11,7 +11,6 @@ function get(url, dado, sucesso, falha) {
 }
 
 function post(url, dado, sucesso, falha) {
-    console.log(pegaUrl() + url);
     $.ajax({
         url: pegaUrl() + url,
         data: dado,
