@@ -1,0 +1,18 @@
+/* @font-face {
+    font-family: "Playfair Display";
+    src:url("/src/assets/fonts/PlayfairDisplay-Regular.otf");
+}
+
+@font-face {
+	font-family: "Abril Fatface";
+	src:url("/src/assets/fonts/PlayfairDisplay-Regular.otf");
+}
+
+@font-face{
+	font-family: "Gilda";
+	src:url("/src/assets/fonts/GildaDisplay-Regular.ttf");
+} */
+
+@import url("/src/assets/fonts/GildaDisplay-Regular.ttf");
+@import url("/src/assets/fonts/PlayfairDisplay-Regular.otf");
+@import url("/src/assets/fonts/AbrilFatface-Regular.otf")
