@@ -1,28 +1,28 @@
 *,
 body {
   font-family: 'Playfair Display', serif;
-  color: #565254;
+  color: var(--main-darker);
 }
 
 
 .borda {
-  border-color: #d3d4d9;
+  border-color: var(--border-color);
   border-style: solid;
   border-width: 1px;
 }
 
 .botao {
-  background-color: #ffffff;
+  background-color: var(--main-lighter);
   font-size: 1em;
   padding: 10px;
 }
 
 .botao:hover {
-  background-color: #ecf0f1;
+  background-color: var(--main-light);
 }
 
 .botao:active {
-  background-color: #d3d4d9;
+  background-color: var(--border-color);
 }
 
 @media (max-width: 750px) {
@@ -48,14 +48,26 @@ body {
   }
 }
 
+.menu-padding {
+  padding: 20px;
+}
+
+.menu-padding>a {
+  cursor: pointer;
+}
+
+.menu-padding>a:hover {
+  color: var(--main-darker);
+}
+
 header {
   height: 100px;
-  color: #565254;
+  color: var(--main-darker);
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: var(--main-lighter);
   border-bottom-style: solid;
-  border-bottom-color: #d0cfcf;
+  border-bottom-color: var(--border-color);
   border-bottom-width: 1px;
   display: flex;
   flex-flow: row wrap;
@@ -116,7 +128,7 @@ header {
 
 .filtro {
   margin-right: 5px;
-  color: #565254;
+  color: var(--main-darker);
   width: 50px;
   height: 50px;
   display: flex;
@@ -132,13 +144,13 @@ header {
 .drop-conteudo {
   display: none;
   position: absolute;
-  background-color: #ffffff;
+  background-color: var(--main-lighter);
   min-width: 160px;
   z-index: 1;
 }
 
 .drop-conteudo a {
-  color: #565254;
+  color: var(--main-darker);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -149,7 +161,7 @@ header {
 }
 
 .drop-conteudo a:hover {
-  background-color: #ecf0f1;
+  background-color: var(--main-light);
 }
 
 .drop-container:hover .drop-conteudo {
@@ -160,11 +172,11 @@ input[type="text"],
 input[type="password"] {
   margin: 9px;
   font-size: 1em;
-  background-color: #fff;
+  background-color: var(--main-lighter);
   border-style: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #d3d4d9;
+  border-bottom-color: var(--border-color);
 }
 
 .botoes-autenticacao {
@@ -291,7 +303,7 @@ section>p {
 }
 
 .erro {
-  color: #ff5964;
+  color: var(--error);
 }
 
 textarea {
@@ -317,7 +329,7 @@ textarea {
   height: 300px;
 }
 
-#titulo{
+#titulo {
   width: inherit;
   font-size: 1.2em;
 }
