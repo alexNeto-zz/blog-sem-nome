@@ -24,18 +24,18 @@
                 </div>
             </c:when>
             <c:otherwise>
-                <button id="myBtn">Open Modal</button>
+                <button id="autenticacao" class="borda botao">Autenticação</button>
 
                 <div id="myModal" class="modal">
                     <div class="modal-body">
                         <div id="menu-autenticacao">
                             <div class="modal-header">
-                                <span class="fecha">&times;</span>
+                                <span class="fecha"></span>
                             </div>
-                            <div>
+                            <div class="menu-padding">
                                 <a onclick="preencherAutenticacao()">Entrar</a>
                             </div>
-                            <div>
+                            <div class="menu-padding">
                                 <a onclick="preencherCadastro()">Cadastrar</a>
                             </div>
                         </div>

@@ -65,7 +65,8 @@
 }
 
 .modal-body {
-    padding: 2px 16px;
+    padding: 16px;
+    max-width: 240px;
 }
 
 .modal-header {

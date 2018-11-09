@@ -48,6 +48,18 @@ body {
   }
 }
 
+.menu-padding {
+  padding: 20px;
+}
+
+.menu-padding>a {
+  cursor: pointer;
+}
+
+.menu-padding>a:hover {
+  color: var(--main-darker);
+}
+
 header {
   height: 100px;
   color: var(--main-darker);
