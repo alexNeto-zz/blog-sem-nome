@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'java-library'
+apply plugin: "eclipse"
+apply plugin: "war"
+
+group = 'com.blog'
+version = '0.0.1'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+	compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile group: 'jstl', name: 'jstl', version:'1.2'
+    compile group: 'org.hibernate', name: 'hibernate-core', version:'5.3.6.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:'5.3.6.Final'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'8.0.12'
+    compile group: 'org.json', name: 'json', version:'20180813'
+    compile group: 'com.thedeanda', name: 'lorem', version:'2.1'
+    compile group: 'com.google.guava', name: 'guava', version:'26.0-jre'
+}
+
+
+
