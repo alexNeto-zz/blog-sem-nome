@@ -13,7 +13,7 @@
                     <p>${topico.getConteudoTamanho200()}</p>
                 </div>
                 <div class="botao-ler">
-                    <button type="submit" class="botao borda botao-header" onclick="lerTopico(${topico.getIdentificador()})">Ler</button>
+                    <a type="submit" class="botao borda botao-header" href="${pageContext.request.contextPath}/topico?topico=${topico.getIdentificador()}">Ler</a>
                 </div>
             </article>
         </c:forEach>

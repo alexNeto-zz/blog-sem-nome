@@ -2,27 +2,6 @@
 
 let identificadorTopico = undefined;
 
-function lerTopico(topico) {
-    const dado = {
-        topico: topico
-    };
-    get("topico", dado, mostrarConteudoTopico);
-}
-
-function mostrarConteudoTopico(dado) {
-    $("#titulo").html(censura(dado.titulo));
-    $("#data").html(dado.dataCriacao);
-    $("#conteudo").html(censura(dado.conteudo));
-    identificadorTopico = dado.identificador;
-    mostrarComentarios(dado.comentarios);
-    mostrarTopico();
-}
-
-function mostrarTopico() {
-    mudarParaConteudo(true);
-    paraTopo();
-}
-
 function mostrarComentarios(comentarios) {
     _.forEachRight(comentarios, criaComentario);
 

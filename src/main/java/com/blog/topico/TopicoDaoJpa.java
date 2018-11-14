@@ -43,6 +43,11 @@ public class TopicoDaoJpa implements TopicoDao {
 	}
 
 	@Override
+	public Topico encontrarPeloIdentificador(String identificador) {
+		return entityManager.find(Topico.class, Long.valueOf(identificador));
+	}
+
+	@Override
 	public List<Topico> encontrarTodos() {
 		return entityManager.createQuery("FROM " + Topico.class.getName()).getResultList();
 	}
