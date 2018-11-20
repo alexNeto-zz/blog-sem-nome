@@ -13,7 +13,6 @@
 <body>
 	<jsp:include page="./src/templates/header.jsp" />
 	<jsp:include page="./src/templates/listagem-topicos.jsp"/>
-	<jsp:include page="./src/templates/topico.jsp"/>
 </body>
 
 </html>
