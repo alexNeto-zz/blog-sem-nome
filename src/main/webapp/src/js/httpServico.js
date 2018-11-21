@@ -1,25 +1,20 @@
 "use strict";
 
+const ajaxBody = (url, dado, type = "GET", sucesso, falha) => ({
+    url: pegaUrl() + url,
+    data: dado,
+    type: type,
+    contentType: "application/json",
+    success: sucesso,
+    error: falha !== undefined ? falha : erro
+});
+
 function get(url, dado, sucesso, falha) {
-    consola(url);
-    $.ajax({
-        url: pegaUrl() + url,
-        data: dado,
-        type: "GET",
-        success: sucesso,
-        error: falha !== undefined ? falha : erro
-    });
+    $.ajax(ajaxBody(url, dado, "GET", sucesso, falha));
 }
 
 function post(url, dado, sucesso, falha) {
-    consola(url);
-    $.ajax({
-        url: pegaUrl() + url,
-        data: dado,
-        type: "POST",
-        success: sucesso,
-        error: falha !== undefined ? falha : erro
-    });
+    $.ajax(ajaxBody(url, dado, "POST", sucesso, falha));
 }
 
 function consola(url) {

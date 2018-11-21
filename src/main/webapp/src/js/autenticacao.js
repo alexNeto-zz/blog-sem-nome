@@ -24,10 +24,6 @@ function fazCadastro() {
         post("cadastro", pegaDadosCadastro(), sucesso);
     else
         $("input").addClass("erro");
-
-    function sucesso(dado) {
-        location.reload();
-    }
 }
 
 function validaCampos() {
@@ -100,10 +96,6 @@ function fazAutenticacao() {
         };
     }
 
-    function sucesso(dado) {
-        location.reload();
-    }
-
     function falha(xhr, status, error) {
         $("#apelido").addClass("erro");
         $("#senha").addClass("erro");
@@ -112,17 +104,21 @@ function fazAutenticacao() {
 
 function sair() {
     post("sair", undefined, sucesso);
-
-    function sucesso(dado) {
-        location.reload();
-    }
 }
 
+function sucesso(dado) {
+    console.log(dado);
+    // location.reload();
+}
 /***********************************************/
 /*************** EVENTOS ***********************/
 /***********************************************/
 
-(() => controlaModal())();
+(() => {
+    try {
+        controlaModal()
+    } catch (ignored) {}
+})();
 
 function controlaModal() {
     var modal = document.getElementById('myModal');
