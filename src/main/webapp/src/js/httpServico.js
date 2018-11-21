@@ -17,10 +17,6 @@ function post(url, dado, sucesso, falha) {
     $.ajax(ajaxBody(url, dado, "POST", sucesso, falha));
 }
 
-function consola(url) {
-    console.log(pegaUrl() + url)
-}
-
 function erro(xhr, status, error) {
     console.log("TODO - implements");
     console.log(xhr, status, error);

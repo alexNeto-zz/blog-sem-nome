@@ -8,7 +8,7 @@ function apagarUsuario(identificador) {
 }
 
 function notoTopico() {
-    post("/topico", pegaDadosTopico(), sucesso);
+    post("topico", pegaDadosTopico(), sucesso);
 
     function sucesso(dado) {
         document.getElementById("titulo").value = ""
