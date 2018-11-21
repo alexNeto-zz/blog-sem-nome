@@ -69,6 +69,7 @@ public class ComentarioDaoJpa implements ComentarioDao{
 	}
 
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Comentario> encontrarTodos() {
 		return gerenciadorEntidade.createQuery("FROM " + Comentario.class.getName()).getResultList();

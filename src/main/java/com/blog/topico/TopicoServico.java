@@ -17,9 +17,11 @@ public class TopicoServico {
 	public Topico pegaPeloIdentificador(Object object) {
 
 		Topico topico = topicoRepositorio.encontrarPeloIdentificador(object.toString());
-		topico.setComentarios(comentarioRepositorio
-				.encontrarPeloIdentificadorTopico(topico.getIdentificador() != null ? topico.getIdentificador() : 0));
+		topico.setComentarios(comentarioRepositorio.encontrarPeloIdentificadorTopico(getIdentificador(topico)));
 		return topico;
+	}
 
+	private Long getIdentificador(Topico topico) {
+		return topico.getIdentificador() != null ? topico.getIdentificador() : 0;
 	}
 }

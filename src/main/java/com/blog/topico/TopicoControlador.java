@@ -24,24 +24,22 @@ public class TopicoControlador extends HttpServlet {
 			throws ServletException, IOException {
 
 		Topico topico = new TopicoServico().pegaPeloIdentificador(requisicao.getParameter("topico"));
-
 		requisicao.setAttribute("topico", topico);
-		
-		String apelido = requisicao.getSession() != null ? (String) requisicao.getSession().getAttribute("apelido")
-				: null;
+
+		String apelido = getApelido(requisicao);
 		requisicao.setAttribute("estaLogado", apelido);
-		if (apelido != null) {
-			requisicao.setAttribute("tipoUsuario",
-					UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
-		}
+		if (apelido != null)
+			requisicao.setAttribute("tipoUsuario", getTipoUsuario(apelido));
 
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/topico.jsp");
 		rd.forward(requisicao, resposta);
+	}
 
-		// resposta.setContentType("application/json");
-		// PrintWriter respostaEscritor = resposta.getWriter();
-		// respostaEscritor.print(new
-		// TopicoServico().pegaPeloIdentificador(requisicao.getParameter("topico")));
-		// respostaEscritor.flush();
+	private Object getTipoUsuario(String apelido) {
+		return UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario();
+	}
+
+	private String getApelido(HttpServletRequest requisicao) {
+		return requisicao.getSession() != null ? (String) requisicao.getSession().getAttribute("apelido") : null;
 	}
 }

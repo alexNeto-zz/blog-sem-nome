@@ -36,7 +36,6 @@ function podeEditar() {
     return $("#comentarios").html() === "";
 }
 
-
 function editarTopico() {
     document.getElementById("titulo-edicao").value = document.getElementById("titulo").innerHTML;
     document.getElementById("texto-topico").value = document.getElementById("conteudo").innerHTML;

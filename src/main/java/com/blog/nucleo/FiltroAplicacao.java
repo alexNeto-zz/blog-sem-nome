@@ -28,22 +28,14 @@ public class FiltroAplicacao implements Filter {
 
 		if (loggedIn) {
 			corrente.doFilter(requisicao, resposta);
-		} else {
-			System.out.println("iiiiiiiiiiiiiiii");
 		}
 	}
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		// TODO Auto-generated method stub
-
 	}
-
-	// ...
 }

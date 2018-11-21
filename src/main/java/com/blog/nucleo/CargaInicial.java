@@ -29,10 +29,7 @@ public class CargaInicial implements Filter {
 	private boolean rodouCargaInicial = false;
 
 	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-
-	}
+	public void destroy() {	}
 
 	@Override
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
@@ -45,18 +42,14 @@ public class CargaInicial implements Filter {
 	}
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
-		// TODO Auto-generated method stub
-
-	}
+	public void init(FilterConfig arg0) throws ServletException {	}
 
 	private void rodarCargaInicial() {
 		try {
 			criaUsuariosDeTeste();
 			criaTopicosDeTeste();
 			rodouCargaInicial = true;
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (Exception ignored) {
 		}
 	}
 

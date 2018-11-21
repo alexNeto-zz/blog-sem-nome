@@ -20,11 +20,15 @@ public class UsuarioControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 
-		UsuarioDao usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
-		boolean usuarioExiste = usuarioRepositorio.encontrarPeloNome(requisicao.getParameter("apelido")) != null;
+		boolean usuarioExiste = usuarioExiste(requisicao);
 		resposta.setContentType("application/json");
 		PrintWriter respostaEscritor = resposta.getWriter();
 		respostaEscritor.print(usuarioExiste);
 		respostaEscritor.flush();
+	}
+
+	private boolean usuarioExiste(HttpServletRequest requisicao) {
+		UsuarioDao usuarioRepositorio = UsuarioDaoJpa.pegaInstancia();
+		return usuarioRepositorio.encontrarPeloNome(requisicao.getParameter("apelido")) != null;
 	}
 }

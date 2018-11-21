@@ -1,7 +1,6 @@
 package com.blog.casa;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.blog.topico.Topico;
+import com.blog.nucleo.TipoUsuario;
 import com.blog.topico.TopicoServico;
 import com.blog.usuario.UsuarioDaoJpa;
 import com.google.common.collect.Lists;
@@ -26,19 +25,23 @@ public class CasaControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 
-		TopicoServico topicoServico = new TopicoServico();
-		List<Topico> topicos = Lists.reverse(topicoServico.pegaTodos());
+		requisicao.setAttribute("topicos", Lists.reverse(new TopicoServico().pegaTodos()));
 
-		requisicao.setAttribute("topicos", topicos);
-
-		String apelido = requisicao.getSession() != null ? (String) requisicao.getSession().getAttribute("apelido") : null;
+		String apelido = getApelido(requisicao);
 		requisicao.setAttribute("estaLogado", apelido);
-		if(apelido != null) {
-			requisicao.setAttribute("tipoUsuario", UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario());
-		}
-		
+		if (apelido != null) 
+			requisicao.setAttribute("tipoUsuario", getTipoUsuario(apelido));
+
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
 		rd.forward(requisicao, resposta);
 	}
 
+	private TipoUsuario getTipoUsuario(String apelido) {
+		return UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario();
+	}
+
+	private String getApelido(HttpServletRequest requisicao) {
+		if (requisicao.getSession() != null) return  (String) requisicao.getSession().getAttribute("apelido");
+		else return null;
+	}
 }
