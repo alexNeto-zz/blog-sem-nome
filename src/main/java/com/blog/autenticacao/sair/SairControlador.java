@@ -20,6 +20,7 @@ public class SairControlador extends HttpServlet {
 	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 		requisicao.getSession().setAttribute("apelido", null);
+		resposta.setStatus(200);
 	}
 
 }

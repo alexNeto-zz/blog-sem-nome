@@ -23,7 +23,7 @@ public class CadastroControlador extends HttpServlet {
 		if (cadastro.fazCadastro(requisicao))
 			resposta.setStatus(200);
 		else
-			resposta.setStatus(200);
+			resposta.setStatus(400);
 	}
 
 }

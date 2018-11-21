@@ -21,8 +21,10 @@ public class AutenticacaoControlador extends HttpServlet {
 			throws ServletException, IOException {
 		AutenticacaoServico autenticacao = new AutenticacaoServico();
 		String apelido = autenticacao.fazAutenticacao(requisicao);
-		if (apelido != null)
+		if (apelido != null) {
 			requisicao.getSession().setAttribute("apelido", apelido);
+			resposta.setStatus(200);
+		}
 		else
 			resposta.setStatus(403);
 	}
