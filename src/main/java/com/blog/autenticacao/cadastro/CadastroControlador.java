@@ -28,5 +28,4 @@ public class CadastroControlador extends HttpServlet {
 		} else
 			resposta.setStatus(400);
 	}
-
 }

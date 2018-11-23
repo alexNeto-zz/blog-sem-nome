@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.nucleo.TipoUsuario;
 import com.blog.topico.TopicoServico;
+import com.blog.usuario.Usuario;
 import com.blog.usuario.UsuarioDaoJpa;
 import com.google.common.collect.Lists;
 
@@ -29,7 +30,7 @@ public class CasaControlador extends HttpServlet {
 
 		String apelido = getApelido(requisicao);
 		requisicao.setAttribute("estaLogado", apelido);
-		if (apelido != null) 
+		if (apelido != null)
 			requisicao.setAttribute("tipoUsuario", getTipoUsuario(apelido));
 
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
@@ -37,11 +38,17 @@ public class CasaControlador extends HttpServlet {
 	}
 
 	private TipoUsuario getTipoUsuario(String apelido) {
-		return UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido).getTipoUsuario();
+		Usuario usuario = UsuarioDaoJpa.pegaInstancia().encontrarPeloNome(apelido);
+		if (usuario != null)
+			return usuario.getTipoUsuario();
+		else 
+			return TipoUsuario.NORMAL;
 	}
 
 	private String getApelido(HttpServletRequest requisicao) {
-		if (requisicao.getSession() != null) return  (String) requisicao.getSession().getAttribute("apelido");
-		else return null;
+		if (requisicao.getSession() != null)
+			return (String) requisicao.getSession().getAttribute("apelido");
+		else
+			return null;
 	}
 }
