@@ -107,8 +107,7 @@ function sair() {
 }
 
 function sucesso(dado) {
-    console.log(dado);
-    // location.reload();
+    location.reload();
 }
 /***********************************************/
 /*************** EVENTOS ***********************/

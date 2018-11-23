@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <header>
-    <h1 id="logo">Blog Sem Nome</h1>
+    <h1 id="logo"><a id="titulo-blog" href="${pageContext.request.contextPath}">Blog Sem Nome</a></h1>
 
     <div class="espaco"></div>
 

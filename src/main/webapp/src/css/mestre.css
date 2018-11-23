@@ -333,3 +333,7 @@ textarea {
   width: inherit;
   font-size: 1.2em;
 }
+
+#titulo-blog {
+  text-decoration: none;
+}

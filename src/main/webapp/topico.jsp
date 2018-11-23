@@ -51,7 +51,7 @@
             <a onclick="editarTopico()" class="botao-flutuante-editar borda botao botao-header"><i>Editar<i></a>
             <a onclick="apagarTopico()" class="botao-flutuante-apagar borda botao botao-header"><i>Apagar<i></a>
         </c:if>
-        <a id="botao-voltar" onclick="voltarParaListagem()" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
+        <a id="botao-voltar" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
     </div>
 </body>
 
