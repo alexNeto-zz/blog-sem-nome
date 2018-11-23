@@ -97,6 +97,7 @@ function fazAutenticacao() {
     }
 
     function falha(xhr, status, error) {
+        console.log(xhr, status, error);
         $("#apelido").addClass("erro");
         $("#senha").addClass("erro");
     }

@@ -4,7 +4,7 @@ const ajaxBody = (url, dado, type = "GET", sucesso, falha) => ({
     url: pegaUrl() + url,
     data: dado,
     type: type,
-    contentType: "application/json",
+    dataType: "json",
     success: sucesso,
     error: falha !== undefined ? falha : erro
 });

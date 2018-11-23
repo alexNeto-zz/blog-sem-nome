@@ -1,6 +1,7 @@
 package com.blog.autenticacao.autenticacao;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,10 @@ public class AutenticacaoControlador extends HttpServlet {
 		if (apelido != null) {
 			requisicao.getSession().setAttribute("apelido", apelido);
 			resposta.setStatus(200);
+			resposta.setContentType("application/json");
+			PrintWriter out = resposta.getWriter();  
+			out.print("{\"status\": 200}");
+			out.flush();
 		}
 		else
 			resposta.setStatus(403);

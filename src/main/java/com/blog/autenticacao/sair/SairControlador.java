@@ -1,6 +1,7 @@
 package com.blog.autenticacao.sair;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,10 @@ public class SairControlador extends HttpServlet {
 			throws ServletException, IOException {
 		requisicao.getSession().setAttribute("apelido", null);
 		resposta.setStatus(200);
+		resposta.setContentType("application/json");
+		PrintWriter out = resposta.getWriter();  
+		out.print("{\"status\": 200}");
+		out.flush();
 	}
 
 }
