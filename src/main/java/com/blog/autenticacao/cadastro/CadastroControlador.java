@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.blog.utilitario.RespostaPadrao;
+
 @WebServlet("/cadastro")
 public class CadastroControlador extends HttpServlet {
 
@@ -20,9 +22,10 @@ public class CadastroControlador extends HttpServlet {
 	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 		CadastroServico cadastro = new CadastroServico();
-		if (cadastro.fazCadastro(requisicao))
+		if (cadastro.fazCadastro(requisicao)) {
 			resposta.setStatus(200);
-		else
+			RespostaPadrao.json(resposta.getWriter());
+		} else
 			resposta.setStatus(400);
 	}
 

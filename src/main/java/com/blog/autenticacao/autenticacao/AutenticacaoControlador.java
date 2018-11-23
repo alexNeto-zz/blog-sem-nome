@@ -1,13 +1,14 @@
 package com.blog.autenticacao.autenticacao;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.blog.utilitario.RespostaPadrao;
 
 @WebServlet("/autenticacao")
 public class AutenticacaoControlador extends HttpServlet {
@@ -26,9 +27,7 @@ public class AutenticacaoControlador extends HttpServlet {
 			requisicao.getSession().setAttribute("apelido", apelido);
 			resposta.setStatus(200);
 			resposta.setContentType("application/json");
-			PrintWriter out = resposta.getWriter();  
-			out.print("{\"status\": 200}");
-			out.flush();
+			RespostaPadrao.json(resposta.getWriter());
 		}
 		else
 			resposta.setStatus(403);
