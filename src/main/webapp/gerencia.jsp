@@ -40,7 +40,7 @@
                 <textarea name="texto-comentario" id="texto-topico" placeholder="Escreva algo..."></textarea>
             </div>
             <div class="botao-ler">
-                <button id="formulario-comentar" class="botao borda botao-header" onclick="notoTopico()">Enviar</button>
+                <button id="formulario-comentar" class="botao borda botao-header" onclick="novoTopico()">Enviar</button>
             </div>
         </article>
     </section>

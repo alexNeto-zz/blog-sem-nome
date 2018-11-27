@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.topico.Topico;
 import com.blog.topico.TopicoDaoJpa;
+import com.blog.utilitario.RespostaPadrao;
 
 @WebServlet("/restrito/gerenciar/topico")
 public class GerenciadorTopicoControlador extends HttpServlet {
@@ -31,6 +32,8 @@ public class GerenciadorTopicoControlador extends HttpServlet {
 		Topico topico = new Topico();
 		topico.setConteudo(requisicao.getParameter("conteudo"));
 		topico.setTitulo(requisicao.getParameter("titulo"));
+		resposta.setContentType("application/json");
+		RespostaPadrao.json(resposta.getWriter());
 		TopicoDaoJpa.pegaInstancia().inserir(topico);
 
 	}
