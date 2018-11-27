@@ -36,8 +36,8 @@ function novoTopico() {
 
     function pegaDadosTopico() {
         return {
-            titulo: document.getElementById("titulo").value,
-            conteudo: document.getElementById("texto-topico").value
+            titulo: censura(document.getElementById("titulo").value),
+            conteudo: censura(document.getElementById("texto-topico").value)
         };
     }
 }
