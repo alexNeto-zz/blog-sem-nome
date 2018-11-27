@@ -14,9 +14,6 @@
         </section>
 
         <fieldset id="comentar" class="borda margem-conteudo-principal comentario" hidden>
-            <script>
-                $("#formulario-comentar").click(comentar);
-            </script>
             <textarea name="texto-comentario" id="texto-comentario" rows="5" placeholder="Comente algo..."></textarea>
             <button id="formulario-comentar" class="botao borda botao-header" onclick="comentar()">Enviar</button>
         </fieldset>

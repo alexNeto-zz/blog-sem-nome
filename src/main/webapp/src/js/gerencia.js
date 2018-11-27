@@ -5,7 +5,11 @@ function apagarUsuario(identificador) {
     const dado = {
         identificador: identificador
     };
-    post("restrito/gerenciar", dado, dado => dado);
+    post("restrito/gerenciar", dado, recarrega, recarrega);
+
+    function recarrega() {
+        location.reload();
+    }
 }
 
 function apagarTopico() {

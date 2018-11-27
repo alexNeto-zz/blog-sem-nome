@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.usuario.Usuario;
 import com.blog.usuario.UsuarioServico;
+import com.blog.utilitario.RespostaPadrao;
 import com.google.common.collect.Lists;
 
 @WebServlet("/restrito/gerenciar")
@@ -32,12 +33,14 @@ public class GerenciaControlador extends HttpServlet {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/gerencia.jsp");
 		rd.forward(requisicao, resposta);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
 		UsuarioServico usuario = new UsuarioServico();
 		usuario.apagaUsuario(Long.valueOf(requisicao.getParameter("identificador")));
+		resposta.setContentType("application/json");
+		RespostaPadrao.json(resposta.getWriter());
 		resposta.setStatus(200);
 	}
 }

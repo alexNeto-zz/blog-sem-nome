@@ -1,7 +1,5 @@
 "use strict";
 
-let identificadorTopico = undefined;
-
 function paraTopo() {
   window.scrollTo(0, 0);
 }
@@ -20,17 +18,32 @@ function comentar() {
   post("comentario", pegaComentario(), sucesso);
 
   function sucesso(dado) {
-    document.getElementById("texto-comentario").value = "";
+    limpaComentario();
     location.reload();
   }
+
+  function falha() {
+    limpaComentario();
+  }
+
+  function limpaComentario() {
+    document.getElementById("texto-comentario").value = "";
+  }
+
 }
 
 function pegaComentario() {
   return {
     conteudo: censura(document.getElementById("texto-comentario").value),
-    identificadorTopico: identificadorTopico
+    identificadorTopico: pegaIdentificadorTopico()
   };
 }
+
+function pegaIdentificadorTopico() {
+  let url = new URL(window.location.href);
+  return url.searchParams.get("topico");
+}
+
 
 function podeEditar() {
   return $("#comentarios").html() === "";

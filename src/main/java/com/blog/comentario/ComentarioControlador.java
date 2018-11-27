@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.blog.utilitario.RespostaPadrao;
+
 @WebServlet("/comentario")
 public class ComentarioControlador extends HttpServlet {
 
@@ -24,6 +26,8 @@ public class ComentarioControlador extends HttpServlet {
 			resposta.setStatus(200);
 		else
 			resposta.setStatus(200);
+		resposta.setContentType("application/json");
+		RespostaPadrao.json(resposta.getWriter());
 	}
 
 	@Override

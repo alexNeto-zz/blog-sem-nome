@@ -14,7 +14,7 @@ const palavroes = [
     "invertebrado", "jacu", "jegue", "jumento", "kct", "komodo", "ku", "lazarento", "lazaro",
     "leproso", "lerdo", "lesma", "lezado", "lico", "limpezaanal", "lixo", "lombriga", "macaco",
     "marimoon", "merda", "meretriz", "miolodecu", "mocorongo", "montedemerda", "morfetico",
-    "mulambo", "n00b", "nazista", "nerd", "newbie", "nhaca", "nonsense", "ogro", "olhodocu",
+    "mulambo", "nazista", "nerd", "newbie", "nhaca", "nonsense", "ogro", "olhodocu",
     "olhogordo", "otario", "palhaco", "panaca", "paraguaio", "passaralho", "paunocu", "periquita",
     "pimenteira", "pipoca", "piranha", "piroca", "pistoleira", "porra", "prostituta", "punheta",
     "puta", "putaquepariu", "quasimodo", "quenga", "quirguistao", "rampero", "rapariga", "raspadinha",

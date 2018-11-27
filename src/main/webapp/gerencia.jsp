@@ -26,7 +26,7 @@
                     <p>tipo: ${usuario.getTipoUsuario()}</p>
                 </div>
                 <div class="botao-ler">
-                    <button type="submit" class="botao borda botao-header" onclick="apagarUsuario(${usuario.getIdentificador()})">Apagar</button>
+                    <button id="apagar-usuario" class="botao borda botao-header" onclick="apagarUsuario(${usuario.getIdentificador()})">Apagar</button>
                 </div>
             </article>
         </c:forEach>
