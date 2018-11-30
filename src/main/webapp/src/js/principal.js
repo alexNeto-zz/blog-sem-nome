@@ -29,7 +29,6 @@ function comentar() {
   function limpaComentario() {
     document.getElementById("texto-comentario").value = "";
   }
-
 }
 
 function pegaComentario() {
@@ -44,9 +43,8 @@ function pegaIdentificadorTopico() {
   return url.searchParams.get("topico");
 }
 
-
 function podeEditar() {
-  return $("#comentarios").html() === "";
+  return $("comentarios").html() == undefined;
 }
 
 function editarTopico() {
@@ -68,17 +66,29 @@ function cancelarEdicao() {
   mostrarCamposEdicaoTopico(false);
 }
 
+function enviarTopico() {
+  const dado = {
+    identificador: pegaIdentificadorTopico(),
+    titulo: censura(document.getElementById("titulo-edicao").value),
+    conteudo: censura(document.getElementById("texto-topico").value)
+  };
+  if (podeEditar()) post("restrito/gerenciar/topico/edicao", dado, sucesso);
+
+  function sucesso(dado) {
+    location.reload();
+  }
+}
+
 /***********************************************/
 /*************** EVENTOS ***********************/
 /***********************************************/
 
 function voltar() {
   const botalVoltar = document.getElementById("botao-voltar");
-  if (botalVoltar != undefined) // só 1 igual para pegar null também
-    botalVoltar.onclick = () => (window.history.back());
+  if (botalVoltar != undefined)
+    // só 1 igual para pegar null também
+    botalVoltar.onclick = () => window.history.back();
 }
 
-// definição dos eventos devem ir a cima 
-window.onload = () => (
-  voltar()
-);
+// definição dos eventos devem ir a cima
+window.onload = () => voltar();

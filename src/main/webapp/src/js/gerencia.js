@@ -52,17 +52,3 @@ function apagarComentario(identificador) {
         location.reload();
     }
 }
-
-function enviarTopico() {
-    const dado = {
-        identificador: identificadorTopico,
-        titulo: document.getElementById("titulo-edicao").value,
-        conteudo: document.getElementById("texto-topico").value
-    }
-    if (podeEditar())
-        post("restrito/gerenciar/topico/edicao", dado, sucesso);
-
-    function sucesso(dado) {
-        location.reload();
-    }
-}

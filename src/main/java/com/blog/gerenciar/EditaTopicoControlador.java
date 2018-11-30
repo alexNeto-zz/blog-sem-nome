@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.blog.topico.Topico;
 import com.blog.topico.TopicoDaoJpa;
+import com.blog.utilitario.RespostaPadrao;
 
 @WebServlet("/restrito/gerenciar/topico/edicao")
 public class EditaTopicoControlador extends HttpServlet {
@@ -26,6 +27,9 @@ public class EditaTopicoControlador extends HttpServlet {
 		topico.setConteudo(requisicao.getParameter("conteudo"));
 		topico.setTitulo(requisicao.getParameter("titulo"));
 		TopicoDaoJpa.pegaInstancia().inserir(topico);
+		resposta.setContentType("application/json");
+		resposta.setStatus(200);
+		RespostaPadrao.json(resposta.getWriter());
 
 	}
 }

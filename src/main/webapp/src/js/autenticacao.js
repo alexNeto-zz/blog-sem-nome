@@ -2,10 +2,12 @@
 
 function preencherAutenticacao() {
     mudarParaCadastro(false);
+    $("#apelido").focus();
 }
 
 function preencherCadastro() {
     mudarParaCadastro(true);
+    $("#novo-apelido").focus();
 }
 
 function voltarMenuInicial() {
