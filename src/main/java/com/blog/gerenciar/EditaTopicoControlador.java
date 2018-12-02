@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.blog.topico.Topico;
-import com.blog.topico.TopicoDaoJpa;
+import com.blog.topico.TopicoServico;
 import com.blog.utilitario.RespostaPadrao;
 
 @WebServlet("/restrito/gerenciar/topico/edicao")
@@ -22,11 +22,12 @@ public class EditaTopicoControlador extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest requisicao, HttpServletResponse resposta)
 			throws ServletException, IOException {
+
 		Topico topico = new Topico();
-		TopicoDaoJpa.pegaInstancia().apagaPeloIdentificador(Long.valueOf(requisicao.getParameter("identificador")));
+		topico.setIdentificador(Long.valueOf(requisicao.getParameter("identificador")));
 		topico.setConteudo(requisicao.getParameter("conteudo"));
 		topico.setTitulo(requisicao.getParameter("titulo"));
-		TopicoDaoJpa.pegaInstancia().inserir(topico);
+		new TopicoServico().atualizaTopico(topico);
 		resposta.setContentType("application/json");
 		resposta.setStatus(200);
 		RespostaPadrao.json(resposta.getWriter());

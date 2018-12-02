@@ -10,7 +10,7 @@ public interface Dao<T> {
 
 	public List<T> encontrarTodos();
 
-	public T atualizar(T atual, T novo);
+	public T atualizar(T t);
 
 	public boolean apaga(T t);
 

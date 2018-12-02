@@ -3,6 +3,7 @@ package com.blog.topico;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 import com.blog.nucleo.ConexaoFabrica;
 
@@ -53,8 +54,13 @@ public class TopicoDaoJpa implements TopicoDao {
 	}
 
 	@Override
-	public Topico atualizar(Topico atual, Topico novo) {
-		// TODO Auto-generated method stub
+	public Topico atualizar(Topico topico) {
+		EntityTransaction transacao = entityManager.getTransaction();
+		transacao.begin();
+		Topico novoTopico = this.encontrarPeloIdentificador(topico.getIdentificador());
+		novoTopico.setConteudo(topico.getConteudo());
+		novoTopico.setTitulo(topico.getTitulo());
+		transacao.commit();
 		return null;
 	}
 

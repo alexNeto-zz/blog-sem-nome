@@ -8,8 +8,8 @@ import javax.persistence.TypedQuery;
 
 import com.blog.nucleo.ConexaoFabrica;
 
-public class ComentarioDaoJpa implements ComentarioDao{
-	
+public class ComentarioDaoJpa implements ComentarioDao {
+
 	private static ComentarioDaoJpa instancia;
 	private EntityManager gerenciadorEntidade;
 
@@ -46,8 +46,8 @@ public class ComentarioDaoJpa implements ComentarioDao{
 
 	@Override
 	public List<Comentario> encontrarPeloIdentificadorTopico(Long identificador) {
-		TypedQuery<Comentario> query = gerenciadorEntidade.createQuery(
-				"FROM Comentario u WHERE u.identificadorTopico=:identificadorTopico", Comentario.class);
+		TypedQuery<Comentario> query = gerenciadorEntidade
+				.createQuery("FROM Comentario u WHERE u.identificadorTopico=:identificadorTopico", Comentario.class);
 		query.setParameter("identificadorTopico", identificador);
 		try {
 			return query.getResultList();
@@ -55,11 +55,11 @@ public class ComentarioDaoJpa implements ComentarioDao{
 			return null;
 		}
 	}
-	
+
 	@Override
 	public List<Comentario> encontrarPeloApelido(String apelido) {
-		TypedQuery<Comentario> query = gerenciadorEntidade.createQuery(
-				"FROM Comentario u WHERE u.apelido=:apelido", Comentario.class);
+		TypedQuery<Comentario> query = gerenciadorEntidade.createQuery("FROM Comentario u WHERE u.apelido=:apelido",
+				Comentario.class);
 		query.setParameter("apelido", apelido);
 		try {
 			return query.getResultList();
@@ -68,7 +68,6 @@ public class ComentarioDaoJpa implements ComentarioDao{
 		}
 	}
 
-
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Comentario> encontrarTodos() {
@@ -76,7 +75,7 @@ public class ComentarioDaoJpa implements ComentarioDao{
 	}
 
 	@Override
-	public Comentario atualizar(Comentario atual, Comentario novo) {
+	public Comentario atualizar(Comentario comentario) {
 		// TODO - implements
 		return null;
 	}
@@ -86,7 +85,8 @@ public class ComentarioDaoJpa implements ComentarioDao{
 		Boolean result = true;
 		try {
 			gerenciadorEntidade.getTransaction().begin();
-			Comentario ComentarioParaDeletar = gerenciadorEntidade.find(Comentario.class, Comentario.getIdentificador());
+			Comentario ComentarioParaDeletar = gerenciadorEntidade.find(Comentario.class,
+					Comentario.getIdentificador());
 			gerenciadorEntidade.remove(ComentarioParaDeletar);
 			gerenciadorEntidade.getTransaction().commit();
 		} catch (Exception ex) {

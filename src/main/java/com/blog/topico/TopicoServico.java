@@ -21,7 +21,13 @@ public class TopicoServico {
 		return topico;
 	}
 
+	public Topico atualizaTopico(Topico topico) {
+		return TopicoDaoJpa.pegaInstancia().atualizar(topico);
+
+	}
+
 	private Long getIdentificador(Topico topico) {
 		return topico.getIdentificador() != null ? topico.getIdentificador() : 0;
 	}
+
 }

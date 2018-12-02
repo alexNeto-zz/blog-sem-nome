@@ -45,8 +45,7 @@ public class UsuarioDaoJpa implements UsuarioDao {
 	}
 
 	public Usuario encontrarPeloNome(String apelido) {
-		TypedQuery<Usuario> query = entityManager.createQuery(
-				"FROM Usuario u WHERE u.apelido=:apelido", Usuario.class);
+		TypedQuery<Usuario> query = entityManager.createQuery("FROM Usuario u WHERE u.apelido=:apelido", Usuario.class);
 		query.setParameter("apelido", apelido);
 		try {
 			return query.getSingleResult();
@@ -61,7 +60,7 @@ public class UsuarioDaoJpa implements UsuarioDao {
 	}
 
 	@Override
-	public Usuario atualizar(Usuario atual, Usuario novo) {
+	public Usuario atualizar(Usuario usuario) {
 		// TODO - implements
 		return null;
 	}

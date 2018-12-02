@@ -116,22 +116,16 @@ function sucesso(dado) {
 /*************** EVENTOS ***********************/
 /***********************************************/
 
-(() => {
-    try {
-        controlaModal()
-    } catch (ignored) {}
-})();
-
 function controlaModal() {
     var modal = document.getElementById('myModal');
-    var btn = document.getElementById("autenticacao");
-    var span = document.getElementsByClassName("fecha")[0];
+    var botao = document.getElementById("autenticacao");
+    var fechar = document.getElementsByClassName("fecha")[0];
 
-    btn.onclick = function () {
+    botao.onclick = function () {
         modal.style.display = "block";
     }
 
-    span.onclick = function () {
+    fechar.onclick = function () {
         modal.style.display = "none";
     }
 
@@ -141,3 +135,10 @@ function controlaModal() {
         }
     }
 }
+
+
+window.onload = () => {
+    try {
+        controlaModal()
+    } catch (ignored) {}
+};
