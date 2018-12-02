@@ -131,19 +131,13 @@ function controlaModal() {
     var botao = document.getElementById("autenticacao");
     var fechar = document.getElementsByClassName("fecha")[0];
 
-    botao.onclick = function () {
-        modal.style.display = "block";
-    }
+    botao.onclick = () => modal.style.display = "block";
+    fechar.onclick = () => modal.style.display = "none";
 
-    fechar.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
+    window.onclick = (event) => {
+        if (event.target == modal)
             modal.style.display = "none";
-        }
-    }
+    };
 }
 
 

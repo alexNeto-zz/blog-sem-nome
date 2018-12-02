@@ -99,6 +99,11 @@ header {
   }
 }
 
+a.botao {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .margem-conteudo-principal {
   margin-top: 60px;
   margin-left: 10%;

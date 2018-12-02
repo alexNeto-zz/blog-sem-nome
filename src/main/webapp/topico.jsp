@@ -21,7 +21,7 @@
             </section>
         </div>
         <div id="topico-editavel" hidden>
-            <!-- conteúdo criado dinamicamente -->        
+            <!-- conteúdo criado dinamicamente -->
         </div>
         <jsp:include page="./src/templates/comentario.jsp" />
         <section id="comentarios" class="margem-conteudo-principal borda topicos">
@@ -32,6 +32,11 @@
                         <h3>${comentario.getDataCriacao()}</h3>
                         <p>${comentario.getConteudo()}</p>
                     </div>
+                    <c:if test="${tipoUsuario == 'ADM'}">
+                        <div class="botao-ler">
+                            <a id="apagar-comentario" onclick="apagarComentario(${comentario.getIdentificador()})" type="submit" class="botao borda botao-header">Apagar</a>
+                        </div>
+                    </c:if>
                 </article>
             </c:forEach>
         </section>

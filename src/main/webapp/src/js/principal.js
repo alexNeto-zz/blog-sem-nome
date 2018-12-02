@@ -70,10 +70,10 @@ function enviarTopico() {
     conteudo: censura(document.getElementById("texto-topico").value)
   };
   if (podeEditar()) post("restrito/gerenciar/topico/edicao", dado, sucesso);
+}
 
-  function sucesso(dado) {
-    location.reload();
-  }
+function sucesso(dado) {
+  location.reload();
 }
 
 function painelEdicao() {
@@ -93,4 +93,14 @@ function painelEdicao() {
     </article>
     </section>
     `;
+}
+
+function apagarComentario(identificador) {
+  post("restrito/gerenciar/comentario/apagar", pegaDados(), sucesso)
+
+  function pegaDados() {
+    return {
+      identificador: identificador
+    };
+  }
 }

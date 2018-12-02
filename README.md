@@ -22,9 +22,9 @@
 
 # Dependencias
 
-- gradle
+- gradle (estou usando 4.3.1)
 - tomcat v8.0
-- MariaDB
+- MariaDB (estou usando o 10.2.19-MariaDB)
 
 # Executando
 
