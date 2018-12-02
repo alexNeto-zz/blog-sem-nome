@@ -22,10 +22,6 @@ function comentar() {
     location.reload();
   }
 
-  function falha() {
-    limpaComentario();
-  }
-
   function limpaComentario() {
     document.getElementById("texto-comentario").value = "";
   }
@@ -48,6 +44,7 @@ function podeEditar() {
 }
 
 function editarTopico() {
+  painelEdicao();
   document.getElementById("titulo-edicao").value = document.getElementById(
     "titulo"
   ).innerHTML;
@@ -79,16 +76,21 @@ function enviarTopico() {
   }
 }
 
-/***********************************************/
-/*************** EVENTOS ***********************/
-/***********************************************/
+function painelEdicao() {
+  const topicoEditavel = document.getElementById("topico-editavel");
 
-function voltar() {
-  const botalVoltar = document.getElementById("botao-voltar");
-  if (botalVoltar != undefined)
-    // só 1 igual para pegar null também
-    botalVoltar.onclick = () => window.history.back();
+  topicoEditavel.innerHTML = `
+    <section class="margem-conteudo-principal borda topicos">
+    <article class="borda">
+        <div class="conteudo">
+            <input type="text" name="titulo" id="titulo-edicao" placeholder="Título">
+            <textarea name="texto-comentario" id="texto-topico" placeholder="Escreva algo..."></textarea>
+        </div>
+        <div class="botao-ler">
+            <button id="formulario-comentar" class="botao borda botao-header" onclick="cancelarEdicao()">Cancelar</button>
+            <button id="formulario-comentar" class="botao borda botao-header" onclick="enviarTopico()">Enviar</button>
+        </div>
+    </article>
+    </section>
+    `;
 }
-
-// definição dos eventos devem ir a cima
-window.onload = () => voltar();

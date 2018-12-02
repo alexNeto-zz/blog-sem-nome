@@ -31,27 +31,33 @@ function fazCadastro() {
 function validaCampos() {
     const dados = pegaDadosCadastro();
     dados.confirmaSenha = confirmaSenha();
-    let resultado = true;
-    if (!validaApelido(dados.apelido))
-        resultado = false;
-    if (!validaEmail(dados.email))
-        resultado = false;
-    if (!validaSenha(dados.senha, dados.confirmaSenha))
-        resultado = false;
-    return resultado;
+    const resultado = () => {
+        if (!validaApelido(dados.apelido))
+            return false;
+        if (!validaEmail(dados.email))
+            return false;
+        if (!validaSenha(dados.senha, dados.confirmaSenha))
+            return false;
+        return true;
+    };
+
+    return resultado();
 }
 
 function validaApelido(apelido) {
-    let resultado = true;
     let usuarioExiste;
     get("usuario", pegaApelido(), (dado) => usuarioExiste = dado.usuarioExiste);
-    if (apelido === undefined)
-        resultado = false;
-    if (apelido.length < 3)
-        resultado = false;
-    if (usuarioExiste)
-        resultado = false;
-    return resultado;
+    let resultado = () => {
+        if (apelido === undefined)
+            return false;
+        if (apelido.length < 3)
+            return false;
+        if (usuarioExiste)
+            return false;
+        return true;
+    };
+
+    return resultado();
 
     function pegaApelido() {
         return {
@@ -61,19 +67,24 @@ function validaApelido(apelido) {
 }
 
 function validaEmail(email) {
-    let resultado = true;
-    if (email === undefined)
-        resultado = false;
-    if (!encontra(email, "@"))
-        resultado = false;
-    return resultado;
+    const resultado = () => {
+        if (email === undefined)
+            return false;
+        if (!encontra(email, "@"))
+            return false;
+        return true;
+    };
+    return resultado();
 }
 
 function validaSenha(senha, confirmaSenha) {
-    let resultado = true;
-    if (senha != confirmaSenha)
-        resultado = false;
-    return resultado;
+    let resultado = () => {
+        if (senha != confirmaSenha)
+            return false;
+        return true;
+    };
+
+    return resultado();
 }
 
 function pegaDadosCadastro() {
@@ -99,7 +110,6 @@ function fazAutenticacao() {
     }
 
     function falha(xhr, status, error) {
-        console.log(xhr, status, error);
         $("#apelido").addClass("erro");
         $("#senha").addClass("erro");
     }

@@ -21,18 +21,7 @@
             </section>
         </div>
         <div id="topico-editavel" hidden>
-            <section class="margem-conteudo-principal borda topicos">
-                <article class="borda">
-                    <div class="conteudo">
-                        <input type="text" name="titulo" id="titulo-edicao" placeholder="Título">
-                        <textarea name="texto-comentario" id="texto-topico" placeholder="Escreva algo..."></textarea>
-                    </div>
-                    <div class="botao-ler">
-                        <button id="formulario-comentar" class="botao borda botao-header" onclick="cancelarEdicao()">Cancelar</button>
-                        <button id="formulario-comentar" class="botao borda botao-header" onclick="enviarTopico()">Enviar</button>
-                    </div>
-                </article>
-            </section>
+            <!-- conteúdo criado dinamicamente -->        
         </div>
         <jsp:include page="./src/templates/comentario.jsp" />
         <section id="comentarios" class="margem-conteudo-principal borda topicos">
@@ -48,10 +37,9 @@
         </section>
 
         <c:if test="${tipoUsuario == 'ADM'}">
-            <a onclick="editarTopico()" class="botao-flutuante-editar borda botao botao-header"><i>Editar<i></a>
-            <a onclick="apagarTopico()" class="botao-flutuante-apagar borda botao botao-header"><i>Apagar<i></a>
+            <a id="edicao" onclick="editarTopico()" class="botao-flutuante-editar borda botao botao-header"><i>Editar</i></a>
+            <a id="apagar" onclick="apagarTopico()" class="botao-flutuante-apagar borda botao botao-header"><i>Apagar</i></a>
         </c:if>
-        <a id="botao-voltar" class="botao-flutuante borda botao botao-header"><i>Voltar<i></a>
     </div>
 </body>
 

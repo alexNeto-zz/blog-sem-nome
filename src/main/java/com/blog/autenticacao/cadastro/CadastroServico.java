@@ -29,5 +29,4 @@ public class CadastroServico {
 		}
 		return resultado;
 	}
-
 }
